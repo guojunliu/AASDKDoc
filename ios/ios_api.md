@@ -1,15 +1,5 @@
-[1. 引用 SDK ](#jump1)<br>
-[2. 初始化 SDK](#jump2)<br>
-[3. 设置登陆回调](#jump3)<br>
-[4. 调用登陆方法](#jump4)<br>
-[5. 进入用户中心](#jump5)<br>
-[6. 获取 Facebook 的 token 值](#jump6)<br>
 
-------------
-
-<br>
-
-# <span id="jump1">一、 引用 SDK</span>
+# 1. 引用SDK
 
 1）在 AppDelegate.m 添加如下引用
 
@@ -19,9 +9,8 @@
 
 2）在 App 启动入口方法中初始化 SDK
 
-```
+```objective-c
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
 	[AASAccountSDK application:application didFinishLaunchingWithOptions:launchOptions];  
 	return YES;
 }
@@ -31,16 +20,14 @@
 
 ```
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-
 	[AASAccountSDK application:application openURL:url sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey] annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
-
 	return YES;
 }
 ```
 
 <br>
 
-# <span id="jump2">二、 初始化 SDK</span>
+# 2. 初始化SDK
 
 ```
 /**
@@ -61,7 +48,7 @@
 
 <br>
 
-# <span id="jump3">三、 设置登陆回调</span>
+# 3. 设置登陆回调
 
 ```
 /*
@@ -120,7 +107,7 @@ model.signedRequest 获取 token
 
 <br>
 
-# <span id="jump4">四、 调用登陆方法</span>
+# 4. 调用登陆方法
 
 ```
 + (void)login;
@@ -133,7 +120,7 @@ model.signedRequest 获取 token
 
 <br>
 
-# <span id="jump5">五、 进入用户中心</span>
+# 5. 进入用户中心
 
 ```
 -(void)showUserCenter:(UIViewController *)vc;
@@ -147,7 +134,7 @@ model.signedRequest 获取 token
 
 <br>
 
-# <span id="jump6">六、 获取 Facebook 的 token 值</span>
+# 6. 获取Facebook的token值
 
 ```
 + (NSString *)getFacebookLoginedToken;

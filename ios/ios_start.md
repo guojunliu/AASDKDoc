@@ -1,12 +1,6 @@
-[1. 导入 SDK 包](#jump1)<br>
-[2. 工程配置](#jump2)<br>
-[3. Demo 工程](#jump3)<br>
+# 1. 导入 SDK 包
 
-
-------------
-
-# <span id="jump1">1. 导入 SDK 包</span>
-
+> [!tip]
 > 仅以 Xcode 工程作示例讲解。
 
 ## 1.1 获取 SDK 包 
@@ -28,71 +22,72 @@
 
 在`TARGETS > General > Link Binary With Libraries`中添加依赖库`AdSupport.framework`。
 
-# <span id="jump2">2. 导入 SDK 包</span>
+# 2. 导入SDK包
 1）添加分类编译符
 
 在`TARGETS > Build Setting > Linking > Other Linker Flags`中添加`-ObjC`。
 
 2）在`info.plist`中添加以下节点，以兼容 http 模式。
+
+```xml
+<key>NSAppTransportSecurity</key>
+<dict>
+<key>NSAllowsArbitraryLoads</key>
+<true/>
+</dict>
 ```
-&lt;key>NSAppTransportSecurity&lt;/key>
-&lt;dict>
-&lt;key>NSAllowsArbitraryLoads&lt;/key>
-&lt;true/>
-&lt;/dict>
-```
+
 3）在`info.plist`中添加以下节点，以使用 Facebook 的登录和对话框
 
 > 需在 Facebook 后台注册应用信息后复制粘贴，以下参数仅供参考。
 
-```json
-&lt;key>CFBundleURLTypes&lt;/key>
-&lt;array>
- &lt;dict>
-  &lt;key>CFBundleURLSchemes&lt;/key>
-  &lt;array>
-   &lt;string>FB 应用信息&lt;/string>
-  &lt;/array>
- &lt;/dict>
-&lt;/array>
-&lt;key>CFBundleVersion&lt;/key>
-&lt;string>1&lt;/string>
-&lt;key>FacebookAppID&lt;/key>
-&lt;string>FBAppID&lt;/string>
-&lt;key>FacebookDisplayName&lt;/key>
-&lt;string>FB 应用名称&lt;/string>
+```xml
+<key>CFBundleURLTypes</key>
+<array>
+ <dict>
+  <key>CFBundleURLSchemes</key>
+  <array>
+   <string>FB 应用信息</string>
+  </array>
+ </dict>
+</array>
+<key>CFBundleVersion</key>
+<string>1</string>
+<key>FacebookAppID</key>
+<string>FBAppID</string>
+<key>FacebookDisplayName</key>
+<string>FB 应用名称</string>
 ```
 
 FB 对话框：
+
+```xml
+<key>LSApplicationQueriesSchemes</key>
+<array>
+<string>fbapi</string>
+<string>fb-messenger-share-api</string>
+<string>fbauth2</string>
+<string>fbshareextension</string>
+</array>
 ```
-&lt;key>LSApplicationQueriesSchemes&lt;/key>
-&lt;array>
-&lt;string>fbapi&lt;/string>
-&lt;string>fb-messenger-share-api&lt;/string>
-&lt;string>fbauth2&lt;/string>
-&lt;string>fbshareextension&lt;/string>
-&lt;/array>
-```
+
 4）在 Xcode 的`PROJECT > Info > Localizations`中，点击"+"添加语言。
 
+> [!note]
 > 目前支持：
 >
 > `简体中文（zh）`
->
 > `英文（en）`
->
 > `繁体中文（zh_Hant）`
->
 > `繁体中文-中国台湾（zh_Hant_TW）`
->
 > `繁体中文-中国香港(zh_Hant_HK)`
->
 > `德语(de)`
->
 > `泰语(th)`
 
-# <span id="jump3">3. Demo工程</span>
+# 3. Demo工程
 为更好的了解 AASDK 的导入和使用，请参考 [Demo工程](https://github.com/Avid-ly/Avidly-AASAccount-Demo)。
+
+</br>
 
 # 4. 常见接入问题
 
