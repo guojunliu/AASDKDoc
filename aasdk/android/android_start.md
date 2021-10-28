@@ -1,9 +1,3 @@
-[1. 引入AASDK ](#jump1)</br>
-[2. 添加依赖库](#jump2)<br>
-[3. Demo 工程](#jump3)</br>
-
-------------
-
 # <span id="jump1">1. 引入AASDK</span>
 针对 Android Studio 或 Gradle 构建的工程，建议以从maven仓库获取的方式导入其它主工程中。
 
@@ -11,9 +5,8 @@
 引入AASDK
 
 ```
-
 dependencies {
-        implementation 'com.aas.sdk.account:aasdk:1.1.0.7'
+    implementation 'com.aas.sdk.account:aasdk:1.1.0.7'
 }
 ```
 >**`请注意maven 的最新仓库地址是否与您使用的一致，若不一致会出现类似下面这种找不到库的报错`**</br>
@@ -33,9 +26,6 @@ repositories {
     }
     maven { url "http://bx-mvn.dataverse.cn:58081/repository/maven-releases/"}
 }
-
-
-
 ```
 （2） 追加AASDK仓库地址 仅适用于 Android Studio 2020.x.x 及以上 (可选)
 
@@ -69,14 +59,14 @@ repositories {
 
  通过以下方式添加依赖：
 ```
-    dependencies {
-        implementation 'com.android.support:recyclerview-v7:26.1.0'
-        implementation 'com.android.support:support-v4:26.1.0'
-        implementation 'com.android.support:appcompat-v7:26.1.0'
-        implementation 'com.android.support:support-annotations:26.1.0'
-        implementation  'com.android.support:customtabs:26.1.0'
-        implementation 'com.android.support:cardview-v7:26.1.0'
-    }
+dependencies {
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation 'com.android.support:support-v4:26.1.0'
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:support-annotations:26.1.0'
+    implementation  'com.android.support:customtabs:26.1.0'
+    implementation 'com.android.support:cardview-v7:26.1.0'
+}
 ```
 ### 2.1.2 加入 AndroidX支持库(可选)
 
@@ -86,13 +76,13 @@ repositories {
 
  通过以下方式添加依赖：
 ```
-    dependencies {
-        implementation 'androidx.appcompat:appcompat:1.0.0'
-        implementation 'androidx.recyclerview:recyclerview:1.0.0'
-        implementation 'androidx.cardview:cardview:1.0.0'
-        implementation 'androidx.browser:browser:1.0.0'
-        implementation 'com.google.android.material:material:1.0.0'
-    }
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.browser:browser:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+}
 ```
 
 ## 2.2 添加社交平台支持库
@@ -102,39 +92,42 @@ repositories {
 
 1）添加依赖：
 
-
-    compile('com.facebook.android:facebook-login:[4,5)') {
-        // values.xml 中增加 facebook_app_id，fb_login_protocol_scheme
-        exclude group: 'com.android.support'//排除组织依赖
-        exclude module: 'appcompat-v7'//排除模块依赖
-    }
+```
+compile('com.facebook.android:facebook-login:[4,5)') {
+    // values.xml 中增加 facebook_app_id，fb_login_protocol_scheme
+    exclude group: 'com.android.support'//排除组织依赖
+    exclude module: 'appcompat-v7'//排除模块依赖
+}
+```
 
 > 如只通过本地添加 Facebook 登录所依赖的`aar`文件，也可在`gradle`文件中忽略此配置。
 
 2）在`manifest`中添加 Faceboock 登录参数:
 
+```
+<meta-data
+    android:name="com.facebook.sdk.ApplicationId"
+    android:value="@string/facebook_app_id" />
 
-      <meta-data
-            android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />
+<activity
+    android:name="com.facebook.FacebookActivity"
+    android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+    android:label="@string/app_name" />
 
-        <activity
-            android:name="com.facebook.FacebookActivity"
-            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:label="@string/app_name" />
+<activity
+    android:name="com.facebook.CustomTabActivity"
+    android:exported="true">
+    <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
 
-        <activity
-            android:name="com.facebook.CustomTabActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:scheme="@string/fb_login_protocol_scheme" />
-            </intent-filter>
-        </activity>
+        <data android:scheme="@string/fb_login_protocol_scheme" />
+    </intent-filter>
+</activity>
+```
+        
 > 授权登录 Faceboock 时需使用参数<code>facebook_app_id</code> 和 <code>fb_login_protocol_scheme</code>。
 > 
 > 详情请参考 [Facebook 登录配置](https://developers.facebook.com/docs/facebook-login/android/ "facebook docs")。
@@ -154,9 +147,9 @@ implementation 'com.google.android.gms:play-services-auth:16.0.1'
 
 ```java
 productFlavors {
-        demo {
-            resValue "string", "googleplay_clientid", "your_client_id"
-        }
+    demo {
+        resValue "string", "googleplay_clientid", "your_client_id"
+    }
 }
 ```
 **方法二：** 在`values`文件夹 > `strings.xml`文件中新增`string`：

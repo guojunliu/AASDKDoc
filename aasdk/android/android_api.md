@@ -1,15 +1,4 @@
-[1. 初始化 SDK](#jump1)<br>
-[2. 用户登录](#jump2)</br>
-[3. 用户登录与控制显示](#jump3)</br>
-[4. 获取登录回调](#jump4)<br>
-[5. 进入用户中心](#jump5)<br>
-[6. 获取 Facebook token](#jump6)<br>
-[7. 获取 GGID](#jump7)<br>
-[8. 隐藏与显示Google Play登录入口](#jump8)<br>
-
-------------
-
-# <span id="jump1">1. 初始化 SDK</span>
+# 1. 初始化 SDK
 
 请在`主 Activity`中尽早初始化 SDK，并根据游戏传入对应的`productId`参数，同时调用判断注册登录成功与否的回调。
 
@@ -25,7 +14,7 @@
 
 &ensp;
 
-# <span id="jump2">2. 用户登录</span>
+# 2. 用户登录
 
 请在`主 Activity`中合适位置调用此方法。
 
@@ -38,7 +27,7 @@
 ```java
     AASdk.accountLogin(MainActivity.this);
 ```
-# <span id="jump3">3. 用户登录与控制显示</span>
+# 3. 用户登录与控制显示
 
 请在`主 Activity`中合适位置调用此方法,此方法用于控制显示自动登录动画是否显示，默认是false，不显示。
 
@@ -56,7 +45,7 @@
 
 &ensp;
 
-# <span id="jump4">4. 获取登录回调</span>
+# 4. 获取登录回调
 
 ## 4.1 获取登录回调（GGID 和登录类型）
 > &bull;&ensp;GGID：用户的登录标识<br>
@@ -121,7 +110,7 @@ public interface setAAUTokenCallback {
 ```
 &ensp;
 
-# <span id="jump5">5. 进入用户中心</span>
+# 5. 进入用户中心
 
 ```java
     public static void showUserManagerUI(Context context);
@@ -133,7 +122,7 @@ public interface setAAUTokenCallback {
     AASdk.showUserManagerUI(MainActivity.this);
 ```
 &ensp;
-# <span id="jump6">6. 获取 token</span>
+# 6. 获取 token
 
 登录 Facebook 成功、进入用户中心后，获取 token。
 
@@ -147,7 +136,7 @@ public interface setAAUTokenCallback {
    String fbToken=AASdk.getFacebookLoginedToken();
 ```
 &ensp;
-# <span id="jump7">7. 获取 GGID</span>
+# 7. 获取 GGID
 
 登录 Facebook 成功、进入用户中心后，获取 GGID。
 
@@ -162,7 +151,7 @@ public interface setAAUTokenCallback {
 ```java
    String ggid=AASdk.getLoginedGGid();
 ```
-# <span id="jump8">8.隐藏与显示Google play 登录入口</span>
+# 8.隐藏与显示Google play 登录入口
 > 请在accountLogin前使用
 
 ```java

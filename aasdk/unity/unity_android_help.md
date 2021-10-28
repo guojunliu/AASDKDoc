@@ -27,23 +27,25 @@
 
 ## 4.2 在`AndroidManifest`中添加 Faceboock 登录参数:
 
-             <meta-data
-                android:name="com.facebook.sdk.ApplicationId"
-                android:value="your_facebook_app_id" />
-             <activity
-                android:name="com.facebook.FacebookActivity"
-                android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-                android:label="your_app_name" />
-              <activity
-                android:name="com.facebook.CustomTabActivity"
-                android:exported="true">
-                  <intent-filter>
-                       <action android:name="android.intent.action.VIEW" />
-                        <category android:name="android.intent.category.DEFAULT" />
-                        <category android:name="android.intent.category.BROWSABLE" />
-                        <data android:scheme="\your_fb_login_protocol_scheme" />
-                   </intent-filter>
-                </activity>
+```
+ <meta-data
+    android:name="com.facebook.sdk.ApplicationId"
+    android:value="your_facebook_app_id" />
+ <activity
+    android:name="com.facebook.FacebookActivity"
+    android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+    android:label="your_app_name" />
+ <activity
+    android:name="com.facebook.CustomTabActivity"
+    android:exported="true">
+      <intent-filter>
+           <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="\your_fb_login_protocol_scheme" />
+       </intent-filter>
+  </activity>
+```
 
 >因为unity对数字有长度限制。 其中fb_login_protocol_scheme必须前面带有"\",比如"\1712266368984820"
 > 授权登录 Faceboock 时需使用参数<code>facebook_app_id</code> 和 <code>fb_login_protocol_scheme</code>。
@@ -51,23 +53,25 @@
 > 详情请参考 [Facebook 登录配置](https://developers.facebook.com/docs/facebook-login/android/ "facebook docs")。
 
 ## 4.3 在`AndroidManifest`中添加 Google 登录参数:
-            <meta-data
-                android:name="com.google.login.googleplay_clientid"
-                android:value="your_client_id" />
+
+```
+<meta-data
+    android:name="com.google.login.googleplay_clientid"
+    android:value="your_client_id" />         
+```
+
 > 登录 GooglePlay 时需参数 `client_id`。
 
 # 5. 修改 Proguard
 
 &ensp;&ensp;&ensp;如项目开启混淆功能，请将 `proguard-project.txt` 文件的内容追加至当前项目使用的混淆配置文件中，避免程序出现崩溃异常（因混淆导致包名引用错误）。
+
 ```groovy
-
-
  # 混淆时所采用的算法
 -optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
 
 # 保护注解
 -keepattributes *Annotation*
-
 
 -dontskipnonpubliclibraryclassmembers
 -dontshrink
@@ -104,11 +108,10 @@ android {
 		...
     }
   }
-	
 ```
 ### 7.1.2 使用multidex application
 在 `AndroidManifest.xml` 中追加下述内容
 
-        <application 
-              android:name="android.support.multidex.MultiDexApplication">
-            </application>
+```
+<application android:name="android.support.multidex.MultiDexApplication"></application>
+```

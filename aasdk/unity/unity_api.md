@@ -17,7 +17,6 @@ void initSDK (string productId）
 调用示例：
 
 ```csharp
-
 private const string PRODUCTID = "999999";
 AASDKApi.initSDK (PRODUCTID);
 ```
@@ -147,7 +146,7 @@ AASDKApi.getLoginedGGid();
  AASDKApi.setGPLoginVisible(true);
 ```
 
-# 1. 隐藏与显示自动登录动画
+# 10. 隐藏与显示自动登录动画
 >请在accountLogin之前调用
 
 ```csharp
