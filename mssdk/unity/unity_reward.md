@@ -1,4 +1,4 @@
-## 1、设置激励视频代理
+# 1、设置激励视频代理
 
 方法如下
 
@@ -43,7 +43,7 @@ private void onRewardDidReward(string cpAdUnitID, string message) {
 
 <br>
 
-## 2、判断是否可以播放激励视频
+# 2、判断是否可以播放激励视频
 
 方法如下
 
@@ -66,7 +66,7 @@ public void onBtnClick_isRewardReady()  {
 
 <br>
 
-## 3、播放激励视频
+# 3、播放激励视频
 
 方法如下
 

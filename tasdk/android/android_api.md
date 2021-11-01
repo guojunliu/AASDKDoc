@@ -1,10 +1,5 @@
-[1. 引用 SDK](#jump1)<br>
-[2. 初始化 API](#jump2)</br>
-[3. 特殊调用方法](#jump3)<br>
 
-------------
-
-# <span id="jump1">1. 引用 SDK</span>
+# 1. 引用 SDK
 
 所有方法均以 static 定义在`ALYAnalysis`类中，请将 **ALYAnalysis** 导入至 Java 代码中。
 ```java
@@ -12,7 +7,7 @@ import com.aly.sdk.ALYAnalysis;
 ```
 &ensp;
 
-# <span id="jump2">2. 初始化 API</span>
+# 2. 初始化 API
 ## 2.1 初始化时机
 
 建议在`Applicatiton`或`主 Activity`的`onCreate()`方法中尽早初始化统计 SDK。
@@ -40,7 +35,7 @@ ALYAnalysis.init(getApplicationContext(), BuildConfig.PTDID, BuildConfig.CHANNAL
 
 &ensp;
 
-# <span id="jump3">3. 特殊调用方法</span>
+# 3. 特殊调用方法
 根据 GDPR等政策要求，统计包增加如下方法以满足游戏对不同需求的支持。
 
 ## 3.1 设置 CUSTOMER_ID

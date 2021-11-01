@@ -1,11 +1,11 @@
-## 引入头文件
+# 引入头文件
 在要使用的类中引入头文件
 
 ```
 #import &lt;MSSDK/MSSDK.h>
 ```
 
-## 1、设置插屏广告代理
+# 1、设置插屏广告代理
 
 ```
 [MSSDK setInterstitialDelegate:self];
@@ -13,7 +13,7 @@
 
 <br>
 
-## 2、判断是否可以播放插屏广告
+# 2、判断是否可以播放插屏广告
 
 ```
 BOOL b = [MSSDK hasInterstitialAdAvailable];
@@ -21,7 +21,7 @@ BOOL b = [MSSDK hasInterstitialAdAvailable];
 
 <br>
 
-## 3、播放插屏广告
+# 3、播放插屏广告
 
 ```
 [MSSDK presentInterstitialForAdUnitID:@"YourAdUnitID" fromViewController:self];
@@ -31,7 +31,7 @@ BOOL b = [MSSDK hasInterstitialAdAvailable];
 
 <br>
 
-## 4、代理插屏广告回调
+# 4、代理插屏广告回调
 
 ```
 #pragma mark - MSInterstitialDelegate

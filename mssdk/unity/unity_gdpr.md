@@ -1,4 +1,4 @@
-## 同意GDPR条约
+# 同意GDPR条约
 请在初始化SDK之后调用。
 
 方法如下
@@ -19,7 +19,7 @@ public void onBtnClick_grantConsent() {
 }
 ```
 
-## 拒绝GDPR条约
+# 拒绝GDPR条约
 
 方法如下
 

@@ -1,4 +1,4 @@
-## 1、设置插屏广告代理
+# 1、设置插屏广告代理
 
 方法如下
 
@@ -37,7 +37,7 @@ private void onInterstitialDidClose(string cpAdUnitID, string message) {
 
 <br>
 
-## 2、判断是否可以播放插屏广告
+# 2、判断是否可以播放插屏广告
 
 方法如下
 
@@ -62,7 +62,7 @@ public void onBtnClick_isInterstitialReady () {
 
 <br>
 
-## 3、播放插屏广告
+# 3、播放插屏广告
 
 方法如下
 

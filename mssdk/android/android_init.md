@@ -1,4 +1,4 @@
-## SDK初始化
+# SDK初始化
 请在主Activity中尽早初始化广告SDK。
 
 ```java
@@ -15,12 +15,12 @@
         });
 ```
 
-## 开启 debug
+# 开启 debug
 为方便您的接入调试，您可以在开发期间通过以下方法开启调试log，并且需要在正式发布时将其关闭
 ```java
     MsSDK.setDebuggable(true);
 ```
-## 为生命周期注册回调
+# 为生命周期注册回调
 为了正常加载和展示广告，请在游戏的主activity中注册相应回调。
 ```java
 public  class MainActivity extends AppCompatActivity {

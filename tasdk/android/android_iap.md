@@ -1,25 +1,17 @@
-[1. 概述](#jump1)<br>
-[2. 添加引用](#jump2)<br>
-[3. 支付上报](#jump3)<br>
-[4. 支付上报（附加额外参数）](#jump4)<br>
-[5. 支付上报（附加游戏服务器）](#jump5)<br>
-[6. 支付上报（附加游戏服务器和额外参数）](#jump6)<br>
-[7. Demo](#jump7)<br>
 
-------------
-# <span id="jump1">1. 概述</span>
+# 1. 概述
 
 如游戏中包含 Google 应用内支付功能，需将支付结果同步至统计服务器以便分析用户数据。
 请使用以下 API 完成相应支付上报。
 &ensp;
-# <span id="jump2">2. 添加引用</span>
+# 2. 添加引用
 
 所有方法均以 static 定义在 `ZFLogReport` 类中，请将 **ZFLogReport** 引用至 Java 代码中。
 ```java
 import com.aly.zflog.ZFLogReport;
 ```
 &ensp;
-# <span id="jump3">3. 支付上报</span>
+# 3. 支付上报
 
 ```java
  void logReport((String playerId, String iabPurchaseOriginalJson, String iabPurchaseSignature);
@@ -96,7 +88,7 @@ import com.aly.zflog.ZFLogReport;
 
 
 &ensp;
-# <span id="jump4">4. 支付上报（附加额外参数）</span>
+# 4. 支付上报（附加额外参数）
 
 ```java
 void logReport(String playerId, String iabPurchaseOriginalJson, String iabPurchaseSignature, HashMap<String, String> extraMap);
@@ -120,7 +112,7 @@ void logReport(String playerId, String iabPurchaseOriginalJson, String iabPurcha
 - [亚马逊支付](https://github.com/amzn/amazon-pay-sdk-java?ld=NSGoogle "链接")
 
 &ensp;
-# <span id="jump5">5. 支付上报（附加游戏服务器）</span>
+# 5. 支付上报（附加游戏服务器）
 如上报支付数据时需区分游戏的服务器分区，可使用与 logPaymentWithServer() 相同的方法。
 ```java
  void logReportWithServer(String playerId, String playerServer, String iabPurchaseOriginalJson, String iabPurchaseSignature);
@@ -143,7 +135,7 @@ void logReport(String playerId, String iabPurchaseOriginalJson, String iabPurcha
 ZFLogReport.logPaymentWithServer(playerId, playerServer, iabPurchaseOriginalJson, iabPurchaseSignature);
 ```
 &ensp;
-# <span id="jump6">6. 支付上报（附加游戏服务器和额外参数）</span>
+# 6. 支付上报（附加游戏服务器和额外参数）
 
 ```java
 void logReportWithServerAndExtraMap(String playerId, String playerServer, String iabPurchaseOriginalJson, String iabPurchaseSignature, HashMap<String, String> extraMap);
@@ -166,7 +158,7 @@ void logReportWithServerAndExtraMap(String playerId, String playerServer, String
 ZFLogReport.logReportWithServerAndExtraMap(playerId, playerServer, iabPurchaseOriginalJson, iabPurchaseSignature, null);
 ```
 
-# <span id="jump7">7. Demo</span>
+# 7. Demo
 - [谷歌支付](https://github.com/wawo00/GoogleBilling_Android.git "链接")
 - [华为支付](https://github.com/wawo00/HuaweiPay_Android/tree/master "链接")
 

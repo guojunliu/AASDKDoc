@@ -1,10 +1,5 @@
-[1. 引用 SDK](#jump1)<br>
-[2. 初始化 API](#jump2)</br>
 
-
-------------
-
-# <span id="jump1">1. 引用 SDK</span>
+# 1. 引用 SDK
 
 在需使用的类中导入`TraceAnalysis.h`：
 
@@ -12,7 +7,7 @@
 #import  &lt;TraceAnalysisSDK/TraceAnalysis.h>
 ```
 &ensp;
-# <span id="jump2">2. 初始化 API</span>
+# 2. 初始化 API
 ## 2.1 初始化时机
 
 建议在`AppDelegate`的`- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions`方法中尽早初始化统计 SDK。

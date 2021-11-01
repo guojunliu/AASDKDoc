@@ -1,12 +1,8 @@
-[1. 获得隐私授权](#jump1)<br>
-[2. 测试模式](#jump2)<br>
 
-
-------------
-
+> [!note]
 所有方法均以 **static** 定义在`PSSDK`类中，请将`PSSDK`引用至 Java 代码中。
 
-# <span id="jump1">1.获得隐私授权</span>
+# 1.获得隐私授权
 ## 1.1 API定义
 ```groovy
 public static void requestPrivacyAuthorization(Activity activity, String productId, String playerId, RequestPrivacyAuthorizationCallBack callBack) 
@@ -65,7 +61,7 @@ public enum PrivacyShareStatus {
 }
 ```
 
-# <span id="jump2">2.测试模式</span>
+# 2.测试模式
 ## 2.1 API介绍
 > 请在requestPrivacyAuthorization之前调用
 

@@ -1,11 +1,11 @@
-## 导入UnityPackage
+# 导入UnityPackage
 
 
 [下载](https://github.com/Avid-ly/Avidly-iOS-MSSDK-UnityPackage.git)UnityPackage，然后导入到Unity工程中
 
 <br>
 
-## SDK初始化
+# SDK初始化
 
 其中初始化方法如下
 
@@ -32,7 +32,7 @@ private void InitSDKCompleted(string str) {
 
 ```
 
-## 开启 debug
+# 开启 debug
 为方便您的接入调试，您可以在开发期间通过以下方法开启调试log，并且需要在正式发布时将其关闭
 
 ```

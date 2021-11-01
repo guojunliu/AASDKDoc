@@ -5,7 +5,7 @@
 
 ------------
 
-# <span id="jump1">1. 无参数事件</span>
+# 1. 无参数事件
 
 ```csharp
 void traceKey(string key);
@@ -19,7 +19,7 @@ void traceKey(string key);
 
 &ensp;
 
-# <span id="jump2">2. 单参数事件</span>
+# 2. 单参数事件
 
 ```csharp
 void traceString(string key, string value);
@@ -34,7 +34,7 @@ void traceString(string key, string value);
 
 &ensp;
 
-# <span id="jump3">3. 多参数事件</span>
+# 3. 多参数事件
 
 ```csharp
 void traceDictionary(string key, Dictionary&lt;string, string> dic);
@@ -49,7 +49,7 @@ void traceDictionary(string key, Dictionary&lt;string, string> dic);
 
 &ensp;
 
-# <span id="jump4">4. 计数事件</span>
+# 4. 计数事件
 用于记录事件的次数场景。
 
 ```csharp

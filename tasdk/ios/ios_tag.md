@@ -2,28 +2,27 @@
 # 概述
 
 如果游戏中需要获得用户标签，请使用以下 API 来进行获取。
-- [推广用户标签](#jump1)
-- [付费用户标签](#jump2)
-- [广告用户标签](#jump3)
-- [Deeplink标签](#jump4)
-- [ABTest标签](#jump5)
-&ensp;
+- 推广用户标签
+- 付费用户标签
+- 广告用户标签
+- Deeplink标签
+- ABTest标签
 
 &ensp;
-# 1、<span id="jump1">推广用户标签</span>
+# 1、推广用户标签
 
 
 ## 1.1 添加引用
 
 <br>
 
-#### 1). 添加AppsFlyer
+1). 添加AppsFlyer
 
 添加AppsFlyer到您的项目中，[AppsFlyer接入文档](https://support.appsflyer.com/hc/zh-cn/articles/207032066#%E9%9B%86%E6%88%90)
 
 <br>
 
-#### 2). 引入TraceAnalysis
+2). 引入TraceAnalysis
 在需要调用的地方引用一下代码
 ```oc
 #import &lt;TraceAnalysisSDK/TraceAnalysis.h>;
@@ -114,7 +113,7 @@
 ```
 
 &ensp;
-# 2、<span id="jump2">付费用户标签</span>
+# 2、付费用户标签
 
 &ensp;
 ## 2.1 添加引用
@@ -159,7 +158,7 @@
 <br>
 
 &ensp;
-# 3、<span id="jump3">广告用户标签</span>
+# 3、广告用户标签
 
 &ensp;
 ## 3.1 添加引用
@@ -203,7 +202,7 @@
 <br>
 
 &ensp;
-# 4、<span id="jump4">Deeplink标签</span>
+# 4、Deeplink标签
 
 &ensp;
 ## 4.1 添加引用
@@ -308,7 +307,7 @@
 <br>
 
 &ensp;
-# 5、<span id="jump5">ABTest标签</span>
+# 5、ABTest标签
 
 &ensp;
 ## 5.1 添加引用

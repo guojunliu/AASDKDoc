@@ -1,12 +1,4 @@
-[1. 概述](#jump1)<br>
-[2. 添加引用](#jump2)<br>
-[3. 游客登录上报](#jump3)<br>
-[4. Facebook 登录上报](#jump4)<br>
-[5. 华为登录上报](#jump5)<br>
-[6. 通用登录上报](#jump6)<br>
-
-------------
-# <span id="jump1">1. 概述</span>
+# 1. 概述
 由于登录环节在游戏或应用中至关重要，因此我们单独提供了登录事件方法，以便快速统计登录事件。
 
 如游戏中包含 Facebook 等登录功能，需将登录结果同步至统计服务器以便分析用户数据。请使用以下 API 完成相应登录上报。
@@ -16,13 +8,13 @@
 > &bull;&ensp;如游戏中只包含角色 ID（或游戏 ID），则 playerId 参数取“角色 ID（或游戏 ID）”值。<br>
 
 &ensp;
-# <span id="jump2">2. 添加引用</span>
+# 2. 添加引用
 所有方法都以 static 定义在`ALYLogin`类中，请将 **ALYLogin** 引用到 Java 代码中。
 ```java
 import com.aly.account.ALYLogin;
 ```
 &ensp;
-# <span id="jump3">3. 游客登录上报</span>
+# 3. 游客登录上报
 
 ```java
 void guestLogin(String playerId);
@@ -42,7 +34,7 @@ ALYLogin.guestLogin("playerId");
 ```
 
 &ensp;
-# <span id="jump4">4. Facebook 登录上报</span>
+# 4. Facebook登录上报
 
 ```java
 void facebookLogin(String playerId, String openId, String openToken);
@@ -63,7 +55,7 @@ ALYLogin.facebookLogin("playerId", "openId", "openToken");
 ```
 &ensp;
 
-# <span id="jump5">5. 华为登录上报</span>
+# 5. 华为登录上报
 有关华为 SDK 登录接口详情，请参考[此处](https://developer.huawei.com/consumer/cn/service/hms/catalog/HuaweiJointOperation.html?page=hmssdk_jointOper_api_reference_c9)。
 
 **方法一：** 无需对登录结果进行验签时，请调用此方法。
@@ -94,7 +86,7 @@ public static void huaWeiLogin(String appId, String cpId, String gameServerId, S
 ```
 
 &ensp;
-# <span id="jump6">6. 通用登录上报</span>
+# 6. 通用登录上报
 > 仅当登录上报类型不在上述范围内时，可调用此方法完成登录上报。
 
 调用此方法时，为确保我们服务器能正确识别并接受各参数，请事先与我们沟通参数内容与编码规则。

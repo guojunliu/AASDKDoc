@@ -8,7 +8,7 @@
 - Google Play 服务 9.8.0 或更高版本。
 - 确保您的谷歌账号在测试白名单中
 
-## <span id="jump1">1. 引用TASDK Helper</span>
+## 1. 引用TASDK Helper
 使用 Gradle将以下必需的依赖项复制到应用的 build.gradle 文件中：
 ```groovy
     repositories {
@@ -26,35 +26,35 @@
 
 ```
 
-## <span id="jump2">2. 启动TASDK Helper</span>
+## 2. 启动TASDK Helper
 
 使用下面这行代码启动测试套件：
 
  ```groovy
  TaSdkHelper.showHepler(this, "Your ProductId", "Your ChannelId");
 ```
-## <span id="jump3">3. 测试套件导航</span>
+## 3. 测试套件导航
 
 ![helper01](http://doc.gamehaus.com/uploads/202105/60990305b21bb_60990305.png "helper01")
 
-###  <span >3.1 Initialize-TASDK初始化检查</span>
+###  3.1 Initialize-TASDK初始化检查
 
 图中 **TASDK Version** 后面的数字便是当前SDK的版本号,绿色表示tasdk初始化成功，点击显示当前用户的userId
 
 ![line1](http://doc.gamehaus.com/uploads/202105/6099049214a4b_60990492.png "line1")
 
-###  <span>3.2 Login-登录上报检查</span>
+###  3.2 Login-登录上报检查
 登录上报相关，包括游客登录和fb登录，点击之后loading进行上报，绿色表示通过,如果您游戏不包含facebook的登录，将不会显示facebook登录按钮
 
 ![line2](http://doc.gamehaus.com/uploads/202105/609904c93edc5_609904c9.png "line2")
 
-###  <span>3.3 Pay-支付上报检查</span>
+###  3.3 Pay-支付上报检查
 支付的测试，点击显示输入框，输入框中输入商品id,支付成功，绿色表示通过
 > 目前只支持GP市场的google pay测试
 
 ![pay](http://doc.gamehaus.com/uploads/202105/60990607a1852_60990607.jpg "pay")
 
-###  <span>3.4 Privacy-隐私授权检查</span>
+###  3.4 Privacy-隐私授权检查
 对应的是方法 disableAccessPrivacyInformation() 的调用情况，如果调用了会显示true
 ```groovy
 void disableAccessPrivacyInformation();
@@ -64,7 +64,7 @@ void disableAccessPrivacyInformation();
 相关链接：
 [ 禁止获取设备信息][1]
 
-###  <span>3.5 Channel-发行检查</span>
+###  3.5 Channel-发行检查
 - 如果您的发行渠道是Google play，会在channel下显示**Google Play**，可以无视下方代码。
 
 - 如果您的发行渠道是Amazon，并在manifest文件中添加了有名为channel的标签,会显示如图的内容 **Amzon** 

@@ -1,17 +1,11 @@
-[1. 概述](#jump1)<br>
-[2. 添加引用](#jump2)<br>
-[3. 初始化上报信息](#jump3)<br>
-[4. 生命周期回调](#jump4)<br>
-[5. 最佳实践](#jump5)<br>
 
-------------
-# <span id="jump1">1. 概述</span>
+# 1. 概述
 
 如游戏需要上报游戏时长，请使用以下 API 完成相应在线时长的上报。
 
 使用前需要先初始化SDK
 &ensp;
-# <span id="jump2">2. 添加引用</span>
+# 2. 添加引用
 
 在需使用的类中导入`TraceAnalysis.h`：
 
@@ -19,7 +13,7 @@
 #import  &lt;TraceAnalysisSDK/TraceAnalysis.h>
 ```
 &ensp;
-# <span id="jump3">3. 初始化上报信息</span>
+# 3. 初始化上报信息
 
 ```Objective-C
 + (void)initDurationReportWithServerName:(NSString *)serverName serverZone:(NSString *)serverZone uid:(NSString *)uid ggid:(NSString *)ggid;
@@ -40,7 +34,7 @@
 [TraceAnalysis initDurationReportWithServerName:@"server01" serverZone:@"zone01" uid:@"uid001" ggid:@"ggid001"];
 ```
 &ensp;
-# <span id="jump4">4. 生命周期回调</span>
+# 4. 生命周期回调
 
 请在游戏主activity或AppDelegate中对应的生命周期回调方法中调用。
 
@@ -63,7 +57,7 @@
 ```
 
 &ensp;
-# <span id="jump5">5. 最佳实践</span>
+# 5. 最佳实践
 
 ```
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

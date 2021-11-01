@@ -1,11 +1,5 @@
-[1. 事件打点](#jump1)<br>
-[2. 计数打点](#jump2)</br>
 
-------------
-
-
-
-# <span id="jump1">1. 事件打点</span>
+# 1. 事件打点
 ```objective-c
 + (void)logWithKey:(NSString *)key value:(id)value;
 ```
@@ -67,7 +61,7 @@ value 为 NSArray&lt;NSDictionary>
   [TraceAnalysis logWithKey:@"your key" value:arrB];
 ```
 
-# <span id="jump2">2. 计数打点</span>
+# 2. 计数打点
 ```objective-c
 + (void)countWithKey:(NSString *)key;
 ```

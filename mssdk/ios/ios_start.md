@@ -1,14 +1,14 @@
-
+> [!note]
 iOS Xcode建议使用CocoaPods进行接入
 
 
-##  一、安装CocoaPods
+#  1、安装CocoaPods
 
 本文档默认开发者已安装CocoaPods，如需了解安装CocoaPods，请访问[此处](https://cocoapods.org/)
 
 <br>
 
-## 二、创建Podfile文件
+# 2、创建Podfile文件
 
 在项目`.xcodeproj`文件的同级目录中，在终端使用如下命令，创建Podfile文件
 
@@ -18,7 +18,7 @@ touch Podfile
 
 <br>
 
-## 三、编写Podfile文件内容
+# 3、编写Podfile文件内容
 
 建议使用以下示例
 
@@ -83,7 +83,7 @@ end
 
 <br>
 
-## 四、添加MSSDK的CocoaPods私有库
+# 4、添加MSSDK的CocoaPods私有库
 
 如您是第一次使用MSSDK，请在终端使用如下代码添加
 
@@ -99,7 +99,7 @@ pod repo update MeteorShower
 
 <br>
 
-## 五、安装MSSDK
+# 5、安装MSSDK
 
 在项目`.xcodeproj`文件的同级目录中，在终端使用如下命令
 
@@ -109,7 +109,7 @@ pod install
 
 安装完成之后，应使用`.xcworkspace`打开项目，而不是`.xcodeproj`
 
-## 六、设置Admob、Applovin 联盟key
+# 6、设置Admob、Applovin 联盟key
 
 在Info.plist中配置对应的key <br>
 GADApplicationIdentifier<br>

@@ -1,15 +1,15 @@
-## 介绍
+# 介绍
 
 SKAdNetwork 是 Apple 开发的以隐私为中心的归因机制，让广告平台在不获取 IDFA 的前提下追踪用户的点击和安装行为，衡量广告的转化成效。开发者需要将每个广告平台的 SKAdNetworkIdentifier 配置在游戏的 `Info.plist` 文件中。本工具支持平台众多，添加快捷方便，能够获取各平台最新的 SKAdNetworkIdentifier，去重后写入项目的 `Info.plist` 中。
 <br><br/>
-## 下载
+# 下载
 [SKAdNetwork ID 自动工具](https://github.com/guojunliu/homebrew-stskadnetwork "stskadnetwork")
 <br><br/>
-## 安装
+# 安装
 需要提前安装Homebrew，然后在终端中运行以下代码
 `brew install guojunliu/stskadnetwork/stskadnetwork`
 <br><br/>
-## 使用
+# 使用
 
 ```
 usage: stskadnetwork [-p] [-x <path>] [-t <path>]
@@ -32,7 +32,7 @@ YourPath为文件导出的目的目录
 - `stskadnetwork -t YourPath`
 <br>
 
-## 支持
+# 支持
 当前支持的广告平台：
 
 | 广告平台 | iOS 14 兼容版本 | 参考文档 |

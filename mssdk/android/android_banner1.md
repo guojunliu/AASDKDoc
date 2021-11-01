@@ -1,3 +1,5 @@
+# 快速集成
+
 ### MsGameEasyBannerWrapper 应用场景
 如果仅仅需要在视图顶部或底部构建长条横幅banner广告时，而且banner广告所依附的activity为当前游戏的activity，我们推荐参考以下方式，能更快更简洁地实现目标。
 针对这种情况，MSSDK进一步封装以下对象：

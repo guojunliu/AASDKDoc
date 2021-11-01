@@ -1,4 +1,4 @@
-# <span id="jump1">1. 导入 SDK 包</span>
+# 1. 导入 SDK 包
 
 ## 1.1 AndroidStudio 工程
 
@@ -54,14 +54,14 @@ repositories {
 
 &ensp;
 
-# <span id="jump2">2. 游戏安装数配置</span>
+# 2. 游戏安装数配置
 为正确统计游戏的安装数，统计包中依赖`installreferrer`组件。
 
 ```groovy
 implementation 'com.android.installreferrer:installreferrer:1.1'
 ```
 
-# <span id="jump3">3. 混淆配置</span>
+# 3. 混淆配置
 
 如项目已开启混淆功能，请按照如下规则添加混淆配置。
 
@@ -107,7 +107,7 @@ implementation 'com.android.installreferrer:installreferrer:1.1'
 ```
 &ensp;
 
-# <span id="jump4">4. Demo</span>
+# 4. Demo
 为帮助您更好的了解SDK的接入以及使用，我们为您提供了简单的Demo工程，您可以根据您的IDE使用情况下载对应的工程。
 
 [Android Studio](https://github.com/Avid-ly/Android-AnalysisDemo "Demo工程")

@@ -1,21 +1,16 @@
-[1. 概述](#jump1)<br>
-[2. 添加引用](#jump2)<br>
-[3. 初始化上报信息](#jump3)<br>
-[4. 生命周期回调](#jump4)<br>
 
-------------
-# <span id="jump1">1. 概述</span>
+# 1. 概述
 
 如游戏需要上报游戏时长，请使用以下 API 完成相应在线时长的上报。
 &ensp;
-# <span id="jump2">2. 添加引用</span>
+# 2. 添加引用
 
 所有方法均以 static 定义在 `DurationReport` 类中，请将 **DurationReport** 引用至 Java 代码中。
 ```java
 import com.aly.duration.DurationReport;
 ```
 &ensp;
-# <span id="jump3">3. 初始化上报信息</span>
+# 3. 初始化上报信息
 
 初始化建议在  `onCreate`方法中调用，且不能在子线程中调用，也请不要多次调用
 
@@ -39,7 +34,7 @@ void initReport(String serverName, String serverZone, String uId, String ggId);
 DurationReport.initReport("server01","zone01","uid001","ggid001");;
 ```
 &ensp;
-# <span id="jump4">4. 生命周期回调</span>
+# 4. 生命周期回调
 
 请在游戏主activity中对应的生命周期回调方法中调用。
 

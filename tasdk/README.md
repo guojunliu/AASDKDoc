@@ -37,14 +37,3 @@ TASDK采用User-Event数据模型，将用户行为拆解为用户和事件，�
 3. 集成客户端SDK
 4. 统计上报的测试
 <br><br/>
-
-# 技术文档
-
-如需更多帮助，请联系对接工作人员。
-
-- [JS SDK 帮助文档](http://doc.avidly.com/docs/show/287 "JS SDK 帮助文档")
-- [Android 帮助文档](http://doc.avidly.com/docs/show/237 "Android 帮助文档")
-- [IOS 帮助文档](http://doc.avidly.com/docs/show/236 "IOS 帮助文档")
-- [Unity Plugin 帮助文档](http://doc.avidly.com/docs/show/248 "Unity Plugin 帮助文档")
-- [SDK 下载](http://doc.avidly.com/docs/show/257 "SDK 下载")
-- [S2S 服务端事件上报帮助文档](http://doc.avidly.com/docs/show/499 "S2S 服务端事件上报帮助文档")

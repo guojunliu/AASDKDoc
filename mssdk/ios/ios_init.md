@@ -1,4 +1,4 @@
-## SDK初始化
+# SDK初始化
 在要使用的类中引入头文件
 
 ```
@@ -17,7 +17,7 @@
 + (void)initSDKCompletion:(void(^)(void))completionBlock;
 ```
 
-## 开启 debug
+# 开启 debug
 为方便您的接入调试，您可以在开发期间通过以下方法开启调试log，并且需要在正式发布时将其关闭
 ```java
 #pragma mark - Debug

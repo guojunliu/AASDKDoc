@@ -4,7 +4,7 @@
 
 ------------
 
-# <span id="jump1">1. 概述</span>
+# 1. 概述
 
 如游戏中包含 Google 应用内支付（IAP）功能，需将支付结果同步至统计服务器以便分析用户数据。请使用以下 API 完成相应支付上报。
 
@@ -13,7 +13,7 @@
 > &bull;&ensp;roleId：传游戏中的角色 ID (或游戏 ID)
 
 
-# <span id="jump2">2.Android 支付上报</span>
+# 2.Android 支付上报
 
 ```csharp
 // Android 平台 API
@@ -37,7 +37,7 @@ void traceZFLogReportWithServerForAndroid(string playerId , string gameAccountSe
 | etc| <br>&bull;&ensp;传入额外信息  
 &ensp;
 
-# <span id="jump3">3. iOS支付上报</span>
+# 3. iOS支付上报
 
 ## 3.1 Apple Store应用内支付
 > 需在支付成功后调用 Apple IAP 上报，即`-(void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transaction`中调用。

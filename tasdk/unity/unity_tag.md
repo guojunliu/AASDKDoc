@@ -9,8 +9,7 @@
 [5.ABTest数据](#jump5)<br>
 &ensp;
 
-&ensp;
-#  <span id="jump1">1.推广用户标签</span>
+#  1.推广用户标签
 
 ## 1.1 添加AppsFlyer引用
 
@@ -59,7 +58,7 @@ public void onGetConversionDataClick(string conversionDataJson)
 ```
 
 &ensp;
-#  <span id="jump2">2. 付费用户标签</span>
+#  2. 付费用户标签
 
 ## 2.1 获得用户标签
 
@@ -98,7 +97,7 @@ private void onPayUserLayerFail(string error) {
 }
 ```
 
-#  <span id="jump3">3. 用户广告标签</span>
+#  3. 用户广告标签
 
 ## 3.1 获得用户广告标签
 
@@ -136,7 +135,7 @@ private void onUserAdLayerFail(string error) {
 }
 ```
 
-#  <span id="jump4">4.DeepLink标签</span>
+# 4.DeepLink标签
 
 ## 4.1 获得DeepLink标签
 ```
@@ -177,7 +176,7 @@ Debug.Log("===> onDeepLinkDataFail Callback at: " + error);
 }
 ```
 
-# <span id="jump5">5. ABTest标签</span>
+# 5. ABTest标签
 
 ## 5.1 获得 ABTest标签
 ```

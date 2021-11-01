@@ -1,18 +1,12 @@
-[1. 导入 SDK 包](#jump1)<br>
-[2. 添加系统 framework](#jump2)</br>
-[3. 工程配置](#jump3)<br>
-[4. 兼容性](#jump4)</br>
 
-------------
-
-# <span id="jump1">1. 导入 SDK 包</span>
+# 1. 导入 SDK 包
 
 将 `TraceAnalysisSDK.framework` 导入至工程中，并勾选如下配置
 ![](http://doc.gamehaus.com/uploads/201807/5b3c81f77d038_5b3c81f7.png)
 
 &ensp;
 
-# <span id="jump2">2. 添加系统 framework</span>
+# 2. 添加系统framework
 - 在工程中添加以下系统库
 - libsqlite3.dylib
 
@@ -21,7 +15,7 @@
 
 &ensp;
 
-# <span id="jump3">3. 工程配置</span>
+# 3. 工程配置
 - 在 `info.plist` 中添加以下节点，以兼容 http 模式：
 ```java
  &lt;key>NSAppTransportSecurity &lt;/key>
@@ -39,7 +33,7 @@
 
 &ensp;
 
-# <span id="jump4">4. 兼容性</span>
+# 4. 兼容性
 
 |兼容项|兼容说明|
 |:----  |-----   |

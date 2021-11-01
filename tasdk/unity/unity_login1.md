@@ -1,10 +1,5 @@
-#### [1. 游客登录上报](#jump2)<br>
-#### [2. Facebook 登录上报](#jump3)<br>
-#### [3. 通用登录上报（支持 Android 与 iOS）](#jump4)<br>
-#### [4. 华为登录上报](#jump5)<br>
-------------
 
-# <span id="jump2">1. 游客登录上报</span>
+# 1. 游客登录上报
 如通过游客方式登录，需调用此方法上报：
 ```csharp
 /**
@@ -20,7 +15,7 @@ UPTraceApi.guestLogin ("guest_1234");
 
 &ensp;
 
-# <span id="jump3">2. Facebook 登录上报</span>
+# 2. Facebook 登录上报
 如通过 Facebook 方式登录，需要调用此方法上报：
 ```csharp
 /**
@@ -40,7 +35,7 @@ UPTraceApi.facebookLogin ("facebook_user_id", "", "facebook_token");
 
 
 
-## <span id="jump4"> 3.通用登录上报（支持 Android 与 iOS）
+# 3.通用登录上报（支持 Android 与 iOS）
 
 ```
 public static string LoginTypeGuest 		= "guest";
@@ -65,7 +60,7 @@ public static void logCommonLogin(string loginType, string playerId, string logi
 ```
 
 
-## <span id="jump5">4. 华为登录上报（支持 Android）</span>
+#4. 华为登录上报（支持 Android）
 有关华为 SDK 登录接口详情，请参考[此处](https://developer.huawei.com/consumer/cn/service/hms/catalog/HuaweiJointOperation.html?page=hmssdk_jointOper_api_reference_c9)。
 
 **方法一：** 无需对登录结果进行验签时，请调用此方法。

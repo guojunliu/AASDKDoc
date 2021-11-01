@@ -1,21 +1,13 @@
-[1. 概述](#jump1)<br>
-[2. 获得推广用户标签](#jump2)<br>
-[3. 获得付费用户标签](#jump3)<br>
-[4. 获得用户广告标签](#jump4)<br>
-[5. 获得DeepLink数据](#jump5)<br>
-[6. 获得AbTest数据](#jump6)<br>
 
-
-------------
-# <span id="jump1">1. 概述</span>
+# 1. 概述
 
 用户标签分为推广用户标签,付费用户标签,用户广告标签。
 如果游戏中需要获得用户标签，请使用以下 API 来进行获取。
 &ensp;
 
-# <span id="jump2">2. 获得推广用户标签</span>
+# 2. 获得推广用户标签
 
-## <span >2.1 添加AppsFlyer</span>
+## 2.1 添加AppsFlyer
 
 如果您已添加AppsFlyer到您的项目中，请忽略此步骤
 
@@ -24,23 +16,23 @@ dependencies {
       implementation 'com.appsflyer:af-android-sdk:5.2.0'
 }
 ```
-## <span >2.2 引入ALYAnalysis</span>
+## 2.2 引入ALYAnalysis
 所有方法均以 static 定义在 `ALYAnalysis` 类中，请将 **ALYAnalysis** 引用至 Java 代码中。
 ```java
 import com.aly.sdk.ALYAnalysis;
 ```
 &ensp;
-## <span >2.3 获得用户标签</span>
+## 2.3 获得用户标签
 请从下方API中任选其一进行调用。
 > 请在初始化成功之后调用
 
-#### <span >2.3.1  参数类型是Map</span>
+#### 2.3.1  参数类型是Map
 
 ```java
 getConversionData(Map<String, Object> conversionData, AFConversionDataResultListener afConversionDataResultListener) ;
 ```
 
-#### <span >2.3.2  参数类型是String</span>
+#### 2.3.2  参数类型是String
 
 ```java
 getConversionData(String conversionData, AFConversionDataResultListener afConversionDataResultListener) ;
@@ -71,7 +63,7 @@ getConversionData(String conversionData, AFConversionDataResultListener afConver
             }
 ```
 &ensp;
-## <span >2.4 最佳实践</span>
+## 2.4 最佳实践
 
 ```java
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,9 +110,9 @@ getConversionData(String conversionData, AFConversionDataResultListener afConver
 
 }
 ```
-# <span id="jump3">3. 获得付费用户标签</span>
+# 3. 获得付费用户标签
 
-### <span >3.1 调用API </span>
+### 3.1 调用API
 
 > 请在初始化成功之后调用
 
@@ -152,9 +144,9 @@ ALYAnalysis.getPayUserLayerData(new PayUserLayerDataListener() {
         });
 ```
 
-# <span id="jump4">4. 获得用户广告标签</span>
+# 4. 获得用户广告标签
 
-### <span >4.1 调用API </span>
+### 4.1 调用API 
 
 > 请在初始化成功之后调用
 
@@ -185,9 +177,9 @@ ALYAnalysis.getUserAdLayerData(new UserAdLayerDataListener() {
             }
         });
 ```
-# <span id="jump5">5. 获得DeepLink数据</span>
+# 5. 获得DeepLink数据
 
-### <span >5.1 调用API </span>
+### 5.1 调用API 
 
 > 请在初始化成功之后调用,以下方法任选其一
 
@@ -241,9 +233,9 @@ public static void getDLData(Map<String, Object> conversionData, UserDlLayerData
             }
     };
 ```
-# <span id="jump6">6. 获得ABTest数据</span>
+# 6. 获得ABTest数据
 
-### <span >6.1 调用API </span>
+### 6.1 调用API
 
 > 请在初始化成功之后调用
 

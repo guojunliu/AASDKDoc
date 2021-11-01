@@ -1,15 +1,8 @@
-[1. 前提条件](#jump1)<br>
-[2. 工程引入](#jump2)</br>
-[3. 权限依赖](#jump3)<br>
-[4. 混淆配置](#jump4)</br>
-[5. Demo 工程](#jump5)</br>
 
-------------
-
-# <span id="jump1">1.前提条件</span>
+# 1.前提条件
 前提条件：应用全球发布，包括欧盟北美。
 &ensp;
-# <span id="jump2">2.工程引入</span>
+# 2.工程引入
 
 1）在module的build.gradle中添加pssdk
 
@@ -65,13 +58,13 @@ repositories {
     	implementation 'com.android.support:appcompat-v7:28.0.0'
         }
 
-# <span id="jump3">3. 权限依赖</span>
+# 3. 权限依赖
 PSSDK 依赖如下权限：
 
         <uses-permission android:name="android.permission.INTERNET" />
 		 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
-# <span id="jump4">4. 混淆配置</span>
+# 4. 混淆配置
 如项目已开启混淆功能，请按照如下规则添加混淆配置。
 </br>
 ```groovy
@@ -85,5 +78,5 @@ PSSDK 依赖如下权限：
 
 ```
 &ensp;
-# <span id="jump5">5. Demo 工程</span>
+# 5. Demo 工程
 为更好的了解 PSSDK 的导入和使用，请参考 [Demo工程](https://github.com/Avid-ly/Android-PSSDK-Demo "Demo工程")。

@@ -1,4 +1,4 @@
-## 1. 向用户请求授权
+# 1. 向用户请求授权
 ### 1.1 API介绍
 
 ```java
@@ -35,7 +35,7 @@
         Debug.Log("pssdk onRequsetAuthFail :" +message);
     }
 ```
-## 2. 返回参数说明
+# 2. 返回参数说明
 ### 2.1 授权成功返回 PSSDKAuthModel：
 ``` java 
     private AuthCollectionStatus authCollectionStatus; //收集状态

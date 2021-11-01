@@ -2,7 +2,7 @@
 有关Studio的帮助，本文将以四个要点讲解如下。
 
 
-##  一、导入MSSDK主包
+#  一、导入MSSDK主包
 
 将MSSDK添加到build.gradle文件中
 
@@ -14,7 +14,7 @@
 ```
 
 
-## 二、添加广告联盟和支持库
+# 二、添加广告联盟和支持库
 
 部分广告商的 SDK 运行依赖一些公共的第三方库，使用 Android Studio 构建的项目可以通过下述方式来将所依赖的第三方库导入你的项目。
 
@@ -158,7 +158,7 @@ repositories {
 ```  
 
 
-## 三、修改 Proguard
+# 三、修改 Proguard
 如果你的项目使用了 `proguard`，你需要将 `proguard-project.txt` 文件中的内容复制粘贴到你项目使用的 `proguard` 配置文件中。
 ```groovy
 # 不做预校验，preverify是proguard的四个步骤之一，Android不需要preverify，去掉这一步能够加快混淆速度。
@@ -378,5 +378,5 @@ repositories {
 #pangle end
 ```
 
-## 四、Demo工程
+# 四、Demo工程
 为帮助您更好的了解MSSDK的接入以及使用，我们在这里提供了一个简单的[Demo工程](https://github.com/Avid-ly/Avidly-Android-MSSDK-AndroidStudio)。

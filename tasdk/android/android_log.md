@@ -1,16 +1,8 @@
-[1. 概述](#jump1)<br>
-[2. 无参数事件](#jump2)<br>
-[3. 单参数事件](#jump3)<br>
-[4. 多参数事件](#jump4)<br>
-[5. 计数打点](#jump5)<br>
-
-------------
-
-# <span id="jump1">1. 概述</span>
+# 1. 概述
 统计包扩展多种打点 API，以满足不同业务的打点需求。
 
 &ensp;
-# <span id="jump2">2. 无参数事件</span>
+# 2. 无参数事件
 
 ```java
 void log(String key);
@@ -28,7 +20,7 @@ void log(String key);
 ALYAnalysis.log("game_start");
 ```
 &ensp;
-# <span id="jump3">3. 单参数事件</span>
+# 3. 单参数事件
 ```java
 void log(String key, String value);
 ```
@@ -44,7 +36,7 @@ void log(String key, String value);
 ALYAnalysis.log("game_resume", "duration:30000");
 ```
 &ensp;
-# <span id="jump4">4. 多参数事件</span>
+# 4. 多参数事件
 ```java
 void log(String key, Map<String, String> value);
 ```
@@ -67,7 +59,7 @@ map.put("star", "4");
 ALYAnalysis.log("game_level_pass", map);
 ```
 &ensp;
-# <span id="jump5">5. 计数事件</span>
+# 5. 计数事件
 ```java
 void count(String key);
 ```

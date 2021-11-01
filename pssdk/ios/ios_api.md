@@ -1,7 +1,7 @@
 
-# 一 向用户请求授权
+# 1. 向用户请求授权
 
-### 1、API介绍
+### 1.1 API介绍
 
 ```
 /// 请求授权
@@ -20,7 +20,7 @@
 ```
 
 
-### 2、示例
+### 1.2 示例
 
 ```
 [PSSDK requestPrivacyAuthorizationWithProductId:yourProductId playerId:yourPlayerId vc:self orientation:PSOrientationTypeAuto succeed:^(PSPrivacyAuthorizationModel *model) {
@@ -32,9 +32,9 @@
 
 <br>
 
-# 二 回调Model介绍
+# 2. 回调Model介绍
 
-### 1、API介绍
+### 2.1 API介绍
 
 ```
 // 异常枚举
@@ -92,7 +92,7 @@ typedef NS_ENUM(NSUInteger, PSPrivacySharingStatus) {
 @end
 ```
 
-### 2、参数介绍
+### 2.2 参数介绍
 
 - `authorizationStatus`为授权状态，枚举类型
 - `privacyPolicy`为隐私政策，字符类型

@@ -1,4 +1,4 @@
-## 1、设置横幅广告代理
+# 1、设置横幅广告代理
 
 方法如下
 
@@ -29,7 +29,7 @@ private void onBannerDidClcik(string cpAdUnitID, string message) {
 }
 ```
 
-## 2、展示横幅广告
+# 2、展示横幅广告
 ###IOS
 方法如下
 
@@ -89,7 +89,7 @@ public static void showAndroidBannerAdAtBottom (string cpAdUnitID)
 	}
 ```
 
-## 3、移除横幅广告
+# 3、移除横幅广告
 
 方法如下
 

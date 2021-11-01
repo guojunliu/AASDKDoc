@@ -1,4 +1,4 @@
-## 引入头文件
+# 引入头文件
 在要使用的类中引入头文件
 
 ```
@@ -17,7 +17,7 @@
 #endif
 ```
 
-## 1、获取横幅广告
+# 1、获取横幅广告
 
 声明全局的`MPAdView`对象，示例如下
 
@@ -41,7 +41,7 @@ _bannerView.frame = CGRectMake(0, self.view.frame.size.height - 50, self.view.fr
 [self.view addSubview:_bannerView];
 ```
 
-## 2、设置横幅广告代理
+# 2、设置横幅广告代理
 
 设施横幅广告代理
 
@@ -79,7 +79,7 @@ _bannerView.delegate = self;
 }
 ```
 
-## 3、加载横幅广告
+# 3、加载横幅广告
 
 ```
 [_bannerView loadAdWithMaxAdSize:kMPPresetMaxAdSizeMatchFrame];
