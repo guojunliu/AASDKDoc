@@ -37,7 +37,7 @@ bitcode bundle could not be generated because 'xxx/FBSDKCoreKit.framework/FBSDKC
 
 <br>
 
-## 3、 缺少`Accelerate.framework`
+## 3、 缺少Accelerate.framework
 
 当编译或打包遇到`"_vDSP_mmul"、"_vDSP_dotpr"、"_vDSP_vclip"` 说明缺少`Accelerate.framework`
 
@@ -47,7 +47,7 @@ bitcode bundle could not be generated because 'xxx/FBSDKCoreKit.framework/FBSDKC
 
 <br>
 
-## 4、 缺少`libc++.tbd`
+## 4、 缺少libc++.tbd
 
 当编译或打包遇到`"std::xxx"、"_cxa_throw"` 说明缺少`libc++.tbd`
 

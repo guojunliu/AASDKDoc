@@ -1,95 +1,98 @@
-
 # 1. 引用 SDK
 
-所有方法均以 **static** 定义在`CServiceSdk`类中，请将`CServiceSdk`引用至 Java 代码中。
-</br>
-![引用](http://doc.gamehaus.com/uploads/202001/5e0dc36a4483a_5e0dc36a.png "引用")
-</br>
-&ensp;
-# 2. 初始化 API
-## 2.1 初始化时机
-建议在`Applicatiton`或`主 Activity`的`onCreate()`方法中初始化客服 SDK。
+所有方法均以 **static** 定义在`CServiceSDK`类中，请将`CServiceSDK`引用至代码中。
 
-## 2.2 初始化方法
-`
-void initSdk(Context context,String productid,initCallback callback)
-`
-
+```
+/**
+* @ param productId：产品 ID
+**/
++ (BOOL)initSDK:(NSString *) pdtId;
+```
 
 调用示例：
 
-```java
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        CServiceSdk.initSdk(MainActivity.this,"productid",new InitCallback() {
-            @Override
-            public void onInitSuccess() {
-
-            }
-
-            @Override
-            public void onInitFailed(String errorMsg) {
- 
-            }
-        });
-	}
 ```
-# 3. 反馈页面 API
-## 3.1 调用时机
-调用该 API 前，需确保**已初始化**“统计 SDK”和“客服 SDK”。
-## 3.2 反馈问题 API
+/* 
+初始化 CServiceSDK
+@param productId 产品 ID，需要找项目经理获取
+*/
 
-`
-void feedback(Context context)
-`
-</br>
+BOOL succeed = [CServiceSDK initSDK:@"1000152"];
+if (succeed) {
+    NSLog(@"初始化成功");
+} else {
+    NSLog(@"初始化失败,请检查工程");
+}
+```
+
+<br>
+
+# 2. 展示客服页面 API
+
+```
++ (BOOL)show:(UIViewController *)vc;
+```
 
 调用示例：
-```java
-    public void feedback(View view) {
-        CServiceSdk.feedback(MainActivity.this);
-    }
+
+```
+/**
+* @ param vc：需传入 viewController
+**/
+[CServiceSDK show:self];
 ```
 
-# 4. 是否有新消息
-## 4.1 调用时机
-调用该 API 前，需确保**已初始化**“统计 SDK”和“客服 SDK”。
-## 4.2 是否有新消息
+<br>
 
-`
-void setNewReplayCallback(CSSExistNewReplyCallback callback)
-`
-</br>
+# 3. 查看是否有新消息
+
+```
++ (void)haveNewMessage:(void (^)(BOOL haveNewMessage))completionBlock;
+```
 
 调用示例：
-```java
-         CServiceSdk.setNewReplayCallback(new CSSExistNewReplyCallback() {
-                    @Override
-                    public void hasNewReplySuccess(boolean msg) {
-                        Log.i(TAG, "hasNewReplySuccess: "+msg);
-                    }
 
-                    @Override
-                    public void hasNewReplyFail(String error) {
-                        Log.i(TAG, "hasNewReplySuccess: "+error);
-                    }
-                });
 ```
-# 5. 追加其他信息
-## 5.1 调用时机
-调用该 API 前，需确保**已初始化**“统计 SDK”,且在 CSSDK初始化之前调用
-## 5.2 追加其他信息
+// 查询是否有新消息
+[CServiceSDK haveNewMessage:^(BOOL haveNewMessage) {
+    
+    // 回到主线程处理
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:[NSString stringWithFormat:@"是否有新消息 %@",haveNewMessage?@"YES":@"NO"] preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleCancel handler:nil]];
+        [self presentViewController:alertController animated:YES completion:nil];
+    });
+}];
+```
 
-`
-void addExtraMsg(Map cpinfo)
-`
-> cpinfo用于传递额外信息，比如热更新时候的版本号(CSSConstant.CSSCONSTANT_HOTFIXVER)，如果不需要可以为空
-</br>
+<br>
+
+# 4. 添加透传参数
+
+可以添加自己的参数透传到服务端，如使用，需在初始化之前调用
+
+```
++ (void)addExtraParam:(NSDictionary *)param
+```
 
 调用示例：
-```java
-		Map<String,String> cpInfo=new LinkedHashMap<>();
-		cpInfo.put(CSSConstant.CSSCONSTANT_HOTFIXVER,"1.0.021");
-		CServiceSdk.addExtraMsg(cpInfo);
+
 ```
+NSDictionary *dic = [[NSDictionary alloc] initWithObjectsAndKeys:@"0.212.31", @"hot_version", nil];
+[CServiceSDK addExtraParam:dic];
+```
+
+<br>
+
+# 5. 获取版本信息
+
+```
++ (NSString *)getVersion;
+```
+
+调用示例：
+```
+NSString *ver =  [CServiceSDK getVersion];
+NSLog(@"version is %@",ver);
+```
+

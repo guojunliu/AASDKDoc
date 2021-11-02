@@ -10,57 +10,57 @@
 
 ```java
 
-   /**
-   * 必须优先正确调用此方法，完成game banner的初始化
-   * @param gameActivity 不能为空，当前banner广告所依附的activity
-   */
-   public void initGameBannerWithActivity(Activity gameActivity);
+/**
+* 必须优先正确调用此方法，完成game banner的初始化
+* @param gameActivity 不能为空，当前banner广告所依附的activity
+*/
+public void initGameBannerWithActivity(Activity gameActivity);
 
-   /**
-   * 根据广告位，将banner展现到当前activity的顶部
-   * 请在actvity onresume之后调用此方法，避免异常：BadTokenException: Unable to add window -- token null is not valid;
-   * @param cpPlaceId banner广告位，通常用来标注某种广告的业务类型
-   */
-    public void showTopBannerAtADPlaceId(String cpPlaceId);
+/**
+* 根据广告位，将banner展现到当前activity的顶部
+* 请在actvity onresume之后调用此方法，避免异常：BadTokenException: Unable to add window -- token null is not valid;
+* @param cpPlaceId banner广告位，通常用来标注某种广告的业务类型
+*/
+public void showTopBannerAtADPlaceId(String cpPlaceId);
 
-   /**
-   * 根据广告位，将banner展现到当前activity的底部
-   * 请在onresume之后调用此方法，避免异常：BadTokenException: Unable to add window -- token null is not valid;
-   * @param cpPlaceId banner广告位，通常用来标注某种广告的业务类型
-   */
-   public void showBottomBannerAtADPlaceId(String cpPlaceId);
+/**
+* 根据广告位，将banner展现到当前activity的底部
+* 请在onresume之后调用此方法，避免异常：BadTokenException: Unable to add window -- token null is not valid;
+* @param cpPlaceId banner广告位，通常用来标注某种广告的业务类型
+*/
+public void showBottomBannerAtADPlaceId(String cpPlaceId);
 
-   /**
-   * 根据广告位，添加banner的回调代理
-   * @param cpPlaceId banner广告位，通常用来标注某种广告的业务类型
-   * @param callback banner的回调对象
-   */
-   public void addBannerCallbackAtADPlaceId(String cpPlaceId, MsBannerAdListener callback)
+/**
+* 根据广告位，添加banner的回调代理
+* @param cpPlaceId banner广告位，通常用来标注某种广告的业务类型
+* @param callback banner的回调对象
+*/
+public void addBannerCallbackAtADPlaceId(String cpPlaceId, MsBannerAdListener callback)
 
-   /**
-   * 根据指定的广告位，移除某个banner广告，但不会删除相应的回调
-   * 如果此广告位不存在，不会引发任何实际的操作
-   * banner广告位一旦被移除，下次show的时候，会再次加载
-   * 如果仅仅是隐藏当前banner广告,请调用hideTopBanner()或hideBottomBanner()
-   * @param cpPlaceId banner广告位，通常用来标注某种广告的业务类型
-   */
-   public void removeGameBannerAtADPlaceId(String cpPlaceId);
+/**
+* 根据指定的广告位，移除某个banner广告，但不会删除相应的回调
+* 如果此广告位不存在，不会引发任何实际的操作
+* banner广告位一旦被移除，下次show的时候，会再次加载
+* 如果仅仅是隐藏当前banner广告,请调用hideTopBanner()或hideBottomBanner()
+* @param cpPlaceId banner广告位，通常用来标注某种广告的业务类型
+*/
+public void removeGameBannerAtADPlaceId(String cpPlaceId);
    
-   /**
-   * 隐藏当前顶部banner广告
-   * 无须区分广告位
-   * 再次展示时，需要调用需要调用showTopBannerAtADPlaceId()
-   * 2037开始支持
-   */
-    public void hideTopBanner();
+/**
+* 隐藏当前顶部banner广告
+* 无须区分广告位
+* 再次展示时，需要调用需要调用showTopBannerAtADPlaceId()
+* 2037开始支持
+*/
+public void hideTopBanner();
 	
-   /**
-   * 隐藏当前底部banner广告
-   * 无须区分广告位
-   * 再次展示时，需要调用showBottomBannerAtADPlaceId()
-   * 2037开始支持
-   */
-    public void hideBottomBanner();
+/**
+* 隐藏当前底部banner广告
+* 无须区分广告位
+* 再次展示时，需要调用showBottomBannerAtADPlaceId()
+* 2037开始支持
+*/
+public void hideBottomBanner();
 	
 ```
    
@@ -72,28 +72,28 @@
 ```java
 
 protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_banner);
-        // 初始化banner
-        MsGameEasyBannerWrapper.getInstance().initGameBannerWithActivity(this);
-        // 添加回调接口
-        MsGameEasyBannerWrapper.getInstance().addBannerCallbackAtADPlaceId("banner_aaa", new MsBannerAdListener() {
-            @Override
-            public void onClicked() {
-                Log.i(TAG, "banner_aaa onClicked ");
-            }
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_banner);
+    // 初始化banner
+    MsGameEasyBannerWrapper.getInstance().initGameBannerWithActivity(this);
+    // 添加回调接口
+    MsGameEasyBannerWrapper.getInstance().addBannerCallbackAtADPlaceId("banner_aaa", new MsBannerAdListener() {
+        @Override
+        public void onClicked() {
+            Log.i(TAG, "banner_aaa onClicked ");
+        }
 
-            @Override
-            public void onDisplayed() {
-                Log.i(TAG, "banner_aaa onDisplayed ");
-            }
-        });
-        // 延期0.2s后显示banner，demo仅仅保证在activity onresume之后调用showBottomBannerAtADPlaceId()
-        (new Handler(Looper.getMainLooper())).postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                MsGameEasyBannerWrapper.getInstance().showBottomBannerAtADPlaceId("banner_aaa");
-            }
-        }, 200);
+        @Override
+        public void onDisplayed() {
+            Log.i(TAG, "banner_aaa onDisplayed ");
+        }
+    });
+    // 延期0.2s后显示banner，demo仅仅保证在activity onresume之后调用showBottomBannerAtADPlaceId()
+    (new Handler(Looper.getMainLooper())).postDelayed(new Runnable() {
+        @Override
+        public void run() {
+            MsGameEasyBannerWrapper.getInstance().showBottomBannerAtADPlaceId("banner_aaa");
+        }
+    }, 200);
 }
 ```

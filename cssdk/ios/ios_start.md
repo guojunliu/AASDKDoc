@@ -1,133 +1,65 @@
+# 1. 导入 SDK 包
 
-# 1.前提条件
-前提条件：需导入[统计 SDK](http://doc.gamehaus.com/show/8 "统计sdk")。
-&ensp;
-# 2.工程引入
+> 仅以 Xcode 工程作示例讲解。<br>
+>
+> **前提条件：在接入客服 SDK 之前，导入 [统计 SDK](/tasdk/) 和[登录 SDK](/aasdk/)**，统计SDK和登录SDK**至少接入一个**，否则客服SDK无法运行。</br>
 
-1）引入[CSSDK]
+1）从 [Github](https://github.com/Avid-ly/Avidly-CService-iOS-Demo/releases) 获取 SDK 包
 
-```groovy
-dependencies {
+**CServiceSDK**目录包含如下文件：
 
-implementation 'com.css.sdk:cssdk:2.1.0.4'
-implementation 'com.github.bumptech.glide:glide:4.6.1'
-implementation 'com.luck.picture:pictureSelector:2.5.5'
-implementation 'com.qmuiteam:qmui:1.2.0'
-implementation 'com.qmuiteam:arch:0.3.1'
-
-}
-```
->**`请注意maven 的最新仓库地址是否与您使用的一致，若不一致会出现类似下面这种找不到库的报错`**</br>
-`<Build: failed at`</br>
-`Could not HEAD 'http://bx-mvn.dataverse cn:18081/repository/maven-releases/com/...... >`
-"
+- CService.framework
+- CService.bundle
 
 
+2）添加 CServiceSDK
 
-1.1 追加CSSDK仓库地址
-```groovy
-android {
-    defaultConfig {
-        //...
-    }
-repositories {
-    flatDir {
-        dirs 'libs'
-    }
-    maven { url "http://bx-mvn.dataverse.cn:58081/repository/maven-releases/"}
-}
+请同时将`CService.framework`与`CService.bundle`两个文件添加至`Xcode`工程目录下<br>;（需勾选 Xcode 弹框中的 “**Copy items if needed**” 和 “**Create groups**”）。如下图所示：</br>
 
+![](http://doc.gamehaus.com/uploads/202001/5e0dc28648883_5e0dc286.png)
 
+3）添加第三方依赖库
 
-```
-1.2 追加CSSDK仓库地址 仅适用于 Android Studio 2020.x.x 及以上 (可选)
+在`TARGETS` > `General` > `Link Binary With Libraries`中添加依赖库:
 
+- SystemConfiguration.framework
+- Photos.framework
 
-```groovy
-android {
-    defaultConfig {
-        //...
-    }
-repositories {
-    flatDir {
-        dirs 'libs'
-    }
-    maven { url "https://mvn-bx.dataverse.cn/repository/maven-releases/"}
-}
+<br>
 
-```
-2) 引用support库
-```groovy
-implementation 'com.android.support:appcompat-v7:28.0.0'
-implementation 'com.android.support:cardview-v7:28.0.0'
-implementation 'com.android.support:recyclerview-v7:28.0.0'
-implementation 'com.android.support:customtabs:28.0.0'
-implementation 'com.android.support:design:28.0.0'
+# 2. 工程配置
+1）添加分类编译符
+
+在`TARGETS` > `Build Setting` > `Linking` > `Other Linker Flags`中添加`-ObjC`。
+
+2）在`info.plist`中添加以下节点，以兼容 http 模式。
+
+```xml
+<key>NSAppTransportSecurity</key>
+<dict>
+<key>NSAllowsArbitraryLoads</key>
+	<true/>
+</dict>
 ```
 
-3） 引入androidx库(可选)
-> 如果您使用androidx来构建项目，请按照下面引入androidx库
+3）在`info.plist`中添加以下节点，以访问系统相册。
 
-```groovy
-implementation 'androidx.appcompat:appcompat:1.0.0'
-implementation 'androidx.recyclerview:recyclerview:1.0.0'
-implementation 'androidx.cardview:cardview:1.0.0'
-implementation 'androidx.browser:browser:1.0.0'
-implementation 'com.google.android.material:material:1.0.0'
+```xml
+<key>NSCameraUsageDescription</key>
+<string>是否允许此 App 使用您的相机</string>
+<key>NSContactsUsageDescription</key>
+<string>是否允许此 App 访问您的通讯录？</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>是否允许此 App 使用您的麦克风</string>
+<key>NSPhotoLibraryAddUsageDescription</key>
+<string>系统使用您的相机权限</string>
+<key>NSPhotoLibraryUsageDescription</key>
+<string>系统使用您的相机权限</string>
 ```
 
-# 3. 权限依赖
-客服 SDK 依赖如下权限：
+4）在`Xcode`的`PROJECT` > `Info` > `Localizations`中，点击“+”添加语言。
 
-        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-        <uses-permission android:name="android.permission.INTERNET" />
-        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+> 目前支持三种语言：简体中文、繁体中文和英文
 
-# 4. 混淆配置
-如项目已开启混淆功能，请按照如下规则添加混淆配置。
-</br>
-```groovy
- # 混淆时所采用的算法
--optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
-
-# 保护注解
--keepattributes *Annotation*
-
-
--dontskipnonpubliclibraryclassmembers
--dontshrink
--useuniqueclassmembernames
--keeppackagenames 'com.aly.analysis'
--keepattributes Exceptions,InnerClasses,Signature,Deprecated,SourceFile,LineNumberTable,LocalVariable*Table,*Annotation*,Synthetic,EnclosingMethod
--keepparameternames
--ignorewarnings
-
-#-obfuscationdictionary fm_dic.txt
-#-classobfuscationdictionary class_dic.txt
-#-packageobfuscationdictionary package_dic.txt
-
--keep class com.css.sdk.cservice.* {*;}
--keep public class * extends android.support.v4.app.Fragment
-
-#PictureSelector 2.0
--keep class com.luck.picture.lib.** { *; }
-
-#Ucrop
--dontwarn com.yalantis.ucrop**
--keep class com.yalantis.ucrop** { *; }
--keep interface com.yalantis.ucrop** { *; }
-
-#Okio
--dontwarn org.codehaus.mojo.animal_sniffer.*
-
-#qmui
--keep class com.qmuiteam.qmui.arch.record.RecordIdClassMap { *; }
--keep class com.qmuiteam.qmui.arch.record.RecordIdClassMapImpl { *; }
-
--keep class com.qmuiteam.qmui.arch.scheme.SchemeMap {*;}
--keep class com.qmuiteam.qmui.arch.scheme.SchemeMapImpl {*;}
-
-```
-&ensp;
-# 5. Demo 工程
-为更好的了解客服 SDK 的导入和使用，请参考 [Demo工程](https://github.com/Avid-ly/Android-ServiceSdk-Demo "Demo工程")。
+# 3. Demo 工程
+为更好的了解 ASSDK 的接入和使用，请参考 [Demo](https://github.com/Avid-ly/Avidly-CService-iOS-Demo "Demo")工程。

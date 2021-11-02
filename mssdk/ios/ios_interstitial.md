@@ -2,7 +2,7 @@
 在要使用的类中引入头文件
 
 ```
-#import &lt;MSSDK/MSSDK.h>
+#import <MSSDK/MSSDK.h>
 ```
 
 # 1、设置插屏广告代理

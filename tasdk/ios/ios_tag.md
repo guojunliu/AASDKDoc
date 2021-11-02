@@ -25,7 +25,7 @@
 2). 引入TraceAnalysis
 在需要调用的地方引用一下代码
 ```oc
-#import &lt;TraceAnalysisSDK/TraceAnalysis.h>;
+#import <TraceAnalysisSDK/TraceAnalysis.h>;
 ```
 
 &ensp;
@@ -65,10 +65,10 @@
 
 
 ```Objective-C
-#import &lt;TraceAnalysisSDK/TraceAnalysis.h>
-#import &lt;AppsFlyerLib/AppsFlyerTracker.h>
+#import <TraceAnalysisSDK/TraceAnalysis.h>
+#import <AppsFlyerLib/AppsFlyerTracker.h>
 
-@interface AppDelegate () &lt;AppsFlyerLibDelegate>
+@interface AppDelegate () <AppsFlyerLibDelegate>
 
 @end
 
@@ -120,7 +120,7 @@
 
 引入TraceAnalysis，在需要调用的地方引用一下代码
 ```oc
-#import &lt;TraceAnalysisSDK/TraceAnalysis.h>;
+#import <TraceAnalysisSDK/TraceAnalysis.h>;
 ```
 
 &ensp;
@@ -165,7 +165,7 @@
 
 引入TraceAnalysis，在需要调用的地方引用一下代码
 ```oc
-#import &lt;TraceAnalysisSDK/TraceAnalysis.h>;
+#import <TraceAnalysisSDK/TraceAnalysis.h>;
 ```
 
 &ensp;
@@ -209,7 +209,7 @@
 
 引入TraceAnalysis，在需要调用的地方引用一下代码
 ```oc
-#import &lt;TraceAnalysisSDK/TraceAnalysis.h>;
+#import <TraceAnalysisSDK/TraceAnalysis.h>;
 ```
 
 &ensp;
@@ -255,10 +255,10 @@
 
 
 ```Objective-C
-#import &lt;TraceAnalysisSDK/TraceAnalysis.h>
-#import &lt;AppsFlyerLib/AppsFlyerTracker.h>
+#import <TraceAnalysisSDK/TraceAnalysis.h>
+#import <AppsFlyerLib/AppsFlyerTracker.h>
 
-@interface AppDelegate () &lt;AppsFlyerTrackerDelegate>
+@interface AppDelegate () <AppsFlyerTrackerDelegate>
 
 @end
 
@@ -314,7 +314,7 @@
 
 引入TraceAnalysis，在需要调用的地方引用一下代码
 ```oc
-#import &lt;TraceAnalysisSDK/TraceAnalysis.h>;
+#import <TraceAnalysisSDK/TraceAnalysis.h>;
 ```
 
 &ensp;

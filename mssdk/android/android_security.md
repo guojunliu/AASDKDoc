@@ -8,16 +8,19 @@ Step1:
 
 在项目的res/xml文件夹中新增文件，命名为  `network_security.xml` ，其中内容如下
 
-    <domain-config cleartextTrafficPermitted="true">
-            <domain includeSubdomains="true">127.0.0.1</domain>
-        </domain-config>
+```xml
+<domain-config cleartextTrafficPermitted="true">
+	<domain includeSubdomains="true">127.0.0.1</domain>
+</domain-config>
+```
+        
 Step2:
 
 在项目的manifest.xml中对其进行引用
 
-      <application
-            android:networkSecurityConfig="@xml/network_security"
-         >
+```
+<application android:networkSecurityConfig="@xml/network_security">
+```
 
 具体使用可以参考[Demo](https://github.com/Avid-ly/Avidly-Android-MSSDK-AndroidStudio/blob/master/app/src/main/AndroidManifest.xml "Demo")
 

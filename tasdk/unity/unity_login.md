@@ -1,4 +1,3 @@
-
 由于登录环节在游戏或应用中至关重要，因此我们单独提供了登录事件方法，以便快速统计登录事件。
 
 如游戏中包含 Facebook 等登录功能，需将登录结果同步至统计服务器以便分析用户数据。请使用以下 API 完成相应登录上报。
@@ -21,11 +20,11 @@
 登录方式
 ------------
 
-- 使用AASDK进行登录   [AASDK接入文档参考](http://doc.avidly.com/show/11)
+- 使用AASDK进行登录   [AASDK接入文档参考](/aasdk/)
 - 未使用AASDK进行登录
 
-如果使用AASDK进行登录，请参考[使用AASDK登录上报](http://doc.avidly.com/docs/show/459)文档
+如果使用AASDK进行登录，请参考[使用AASDK登录上报](/tasdk/unity/unity_login2.md)文档
 
-如果未使用AASDK进行登录，请参考[未使用AASDK登录上报](http://doc.avidly.com/docs/show/255)文档
+如果未使用AASDK进行登录，请参考[未使用AASDK登录上报](/tasdk/unity/unity_login1.md)文档
 
 

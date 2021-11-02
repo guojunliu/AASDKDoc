@@ -12,11 +12,11 @@
 ---
 
 # 3.下载依赖文件
-&ensp;&ensp;1）检查导入的unityPackage
+1）检查导入的unityPackage
 - Assets/目录下是否存在`ExternalDependencyManager` 文件夹
 - Assets/目录下是否存在 `CSSDKDependencies.xml`依赖配置文件
 
-&ensp;&ensp;2）下载依赖文件
+2）下载依赖文件
 右键Assets目录，选择External Dependency Manager - Android Resolver - Force Resolve, 下载依赖的jar包
 
 # 4.修改manifest中theme的值
@@ -29,7 +29,6 @@ android:theme="@style/CssAppTheme"
 示例(适用于2017.4.x):
 
 ```html
-
 < manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.unity3d.player"
@@ -56,18 +55,17 @@ android:theme="@style/CssAppTheme"
     < /application>
 < /manifest>
 ```
+
 # 5. 混淆配置
 
 &ensp;&ensp;&ensp;如项目开启混淆功能，请将下面的内容追加到当前项目使用的混淆配置文件中，避免程序出现崩溃异常（因混淆导致包名引用错误）。
 
 ```groovy
-
  # 混淆时所采用的算法
 -optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
 
 # 保护注解
 -keepattributes *Annotation*
-
 
 -dontskipnonpubliclibraryclassmembers
 -dontshrink
@@ -101,9 +99,8 @@ android:theme="@style/CssAppTheme"
 
 -keep class com.qmuiteam.qmui.arch.scheme.SchemeMap {*;}
 -keep class com.qmuiteam.qmui.arch.scheme.SchemeMapImpl {*;}
-
 ```
 
----
 # 6. Demo
-&ensp;&ensp;&ensp;有关CSSDK 的接入及使用，可查看 [Demo工程](https://github.com/Avid-ly/CSSDK-Unity-Demo)。
+
+有关CSSDK 的接入及使用，可查看 [Demo工程](https://github.com/Avid-ly/CSSDK-Unity-Demo)。

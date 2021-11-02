@@ -13,20 +13,20 @@ public static void requestPrivacyAuthorization(Activity activity, String product
 调用示例：
 ```groovy
  PSSDK.requestPrivacyAuthorization(this, productId, gamerId, new PSSDK.RequestPrivacyAuthorizationCallBack() {
-            @Override
-            public void onRequestSuccess(PrivacyAuthorizationResult privacyAuthorizationResult) {
-                Log.i(TAG, "onRequestSuccess: " + privacyAuthorizationResult.toString());
-                toast("onRequestSuccess: " + privacyAuthorizationResult.toString());
+    @Override
+    public void onRequestSuccess(PrivacyAuthorizationResult privacyAuthorizationResult) {
+        Log.i(TAG, "onRequestSuccess: " + privacyAuthorizationResult.toString());
+        toast("onRequestSuccess: " + privacyAuthorizationResult.toString());
 
-            }
+    }
 
-            @Override
-            public void onRequestFail(PrivacyAuthorizationException e) {
-                Log.i(TAG, "onRequestFail: " + e.getErrorMessage());
-                toast("onRequestFail: " + e.getErrorMessage());
+    @Override
+    public void onRequestFail(PrivacyAuthorizationException e) {
+        Log.i(TAG, "onRequestFail: " + e.getErrorMessage());
+        toast("onRequestFail: " + e.getErrorMessage());
 
-            }
-        });
+    }
+});
 ```
 
 **如何获得gameid**：
@@ -62,15 +62,18 @@ public enum PrivacyShareStatus {
 ```
 
 # 2.测试模式
+
 ## 2.1 API介绍
+
 > 请在requestPrivacyAuthorization之前调用
 
 ```groovy
- public static void setDebugable(boolean debugable)
+public static void setDebugable(boolean debugable)
 ```
 
 ## 2.2 使用实例
+
 ```groovy
 // 开启测试模式
- public static void setDebugable( true)
+public static void setDebugable( true)
 ```

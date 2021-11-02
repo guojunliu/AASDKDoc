@@ -2,16 +2,16 @@
 在要使用的类中引入头文件
 
 ```
-#import &lt;MSSDK/MSSDK.h>
+#import <MSSDK/MSSDK.h>
 ```
 
 和
 
 ```
-#if __has_include(&lt;MoPub/MoPub.h>)
-    #import &lt;MoPub/MoPub.h>
-#elif __has_include(&lt;MoPubSDKFramework/MoPub.h>)
-    #import &lt;MoPubSDKFramework/MoPub.h>
+#if __has_include(<MoPub/MoPub.h>)
+    #import <MoPub/MoPub.h>
+#elif __has_include(<MoPubSDKFramework/MoPub.h>)
+    #import <MoPubSDKFramework/MoPub.h>
 #else
     #import "MoPub.h"
 #endif

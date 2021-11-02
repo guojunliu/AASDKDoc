@@ -80,13 +80,13 @@ public static void showAndroidBannerAdAtBottom (string cpAdUnitID)
 示例
 
 ```
-	public void onBtnClick_showTopBanner () {
+public void onBtnClick_showTopBanner () {
 	MSSDK.showAndroidBannerAdAtTop("sss");
-	}
-	
-	public void onBtnClick_showBottomBanner () {
+}
+
+public void onBtnClick_showBottomBanner () {
 	MSSDK.showAndroidBannerAdAtBottom("sss");
-	}
+}
 ```
 
 # 3、移除横幅广告

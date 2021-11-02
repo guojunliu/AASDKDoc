@@ -4,7 +4,7 @@
 在需使用的类中导入`TraceAnalysis.h`：
 
 ```objective-c
-#import  &lt;TraceAnalysisSDK/TraceAnalysis.h>
+#import  <TraceAnalysisSDK/TraceAnalysis.h>
 ```
 &ensp;
 # 2. 初始化 API

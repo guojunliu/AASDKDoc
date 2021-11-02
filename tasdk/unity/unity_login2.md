@@ -1,6 +1,6 @@
 # 1.AASDK介绍
 ---
-AASDK是提供给用户的账户登录SDK，旨在帮助用户在其游戏中快速接入用户登录功能。 [AASDK接入文档参考](http://doc.gamehaus.com/show/11)
+AASDK是提供给用户的账户登录SDK，旨在帮助用户在其游戏中快速接入用户登录功能。 [AASDK接入文档参考](/aasdk/)
 &ensp;
 
 

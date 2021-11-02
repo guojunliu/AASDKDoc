@@ -89,5 +89,3 @@ public void onBtnClick_showReward() {
 
 
 在播放之前需要完成代理的设置
-
-<br>

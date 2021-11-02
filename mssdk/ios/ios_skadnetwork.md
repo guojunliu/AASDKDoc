@@ -7,8 +7,11 @@ SKAdNetwork 是 Apple 开发的以隐私为中心的归因机制，让广告平�
 <br><br/>
 # 安装
 需要提前安装Homebrew，然后在终端中运行以下代码
-`brew install guojunliu/stskadnetwork/stskadnetwork`
-<br><br/>
+
+```
+brew install guojunliu/stskadnetwork/stskadnetwork
+```
+
 # 使用
 
 ```

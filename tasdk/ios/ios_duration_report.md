@@ -10,7 +10,7 @@
 在需使用的类中导入`TraceAnalysis.h`：
 
 ```Objective-C
-#import  &lt;TraceAnalysisSDK/TraceAnalysis.h>
+#import  <TraceAnalysisSDK/TraceAnalysis.h>
 ```
 &ensp;
 # 3. 初始化上报信息

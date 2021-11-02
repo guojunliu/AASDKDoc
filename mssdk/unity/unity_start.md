@@ -1,9 +1,3 @@
-[1. 导入 SDK 包](#jump1)<br>
-[2. 升级 SDK 包](#jump2)</br>
-[3. XUPorter 重复](#jump3)<br>
-
-------------
-
 # 1. 导入 SDK 包
 如首次使用统计 SDK 包，请直接将 **export_analysis_xxxx_both.unitypackage**（如 export_analysis_3016_both.unitypackage）导入至当前工程的`Assets`目录中。如图所示：
 

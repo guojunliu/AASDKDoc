@@ -1,14 +1,70 @@
 
-1、AASDK介绍
+如果您未使用AASDK登录，而是自行接入的登录，我们为您提供了以下登录上报方法：
+
+- 游客登录 上报
+- Facebook登录 上报
+- 通用登录 上报
+
+<br>
+
+# 1、游客登录 上报
+
 ---
-AASDK是提供给用户的账户登录SDK，旨在帮助用户在其游戏中快速接入用户登录功能。 [AASDK接入文档参考](http://doc.gamehaus.com/show/11)
 
-&ensp;
+如果您使用了游客登录，可以快捷的使用如下方法进行登录上报
 
-2、使用AASDK进行登录的，可使用此方法进行登录上报。
+```objective-c
+/**
+ @param playerId 游戏用户 ID
+ */
++ (void)guestLoginWithGameId:(NSString *)playerId;
+```
+
+调用示例：
+
+```objective-c
+[TraceAnalysis guestLoginWithGameId:@"yourPlayerId"];
+```
+
+<br>
+
+# 2、Facebook登录 上报
+
 ---
 
-方法如下
+如果您使用了Facebook登录，可以快捷的使用如下方法进行登录上报
+
+```
+/**
+ Facebook登录 上报
+ 
+ @param playerId  游戏用户ID
+ @param openId    openId，参数已废弃，请传空值
+ @param openToken openToken
+ */
++ (void)facebookLoginWithGameId:(NSString *)playerId
+                         OpenId:(NSString *)openId
+                      OpenToken:(NSString *)openToken;
+```
+
+调用示例：
+
+```objective-c
+[TraceAnalysis facebookLoginWithGameId:@"yourPlayerId" OpenId:@"" OpenToken:@"your open token"];
+```
+
+>[!tip]
+`注意：OpenId参数已废弃，请传空值`
+
+
+<br>
+
+# 3、通用登录 上报
+
+---
+
+如果您使用了除guest和facebook以外的登录方式，我们还为您提供了通用登录上报的方法
+
 
 ```objective-c
 extern NSString *const TraceAnalysisLoginTypeGuest;
@@ -23,25 +79,28 @@ extern NSString *const TraceAnalysisLoginTypeApple;
 extern NSString *const TraceAnalysisLoginTypeOther;
 
 /*
- AAS登录上报
+ 通用登录上报
  @param loginType   登录方式
  @param playerId    游戏用户ID
  @param loginToken  登录凭证
- @param ggid        AASAccountSDK中的ggid
  @param extension   扩展参数
  
  说明：
  1、loginType参数值只能从上述定义的extern字符串中选择，未支持的登录方式请使用TraceAnalysisLoginTypeOther
  2、playerId参数为游戏的用户系统中用户唯一标识
- 3、loginToken为登录方式对应的校验凭证，可以传返回的signedRequest
- 4、ggid参数为AASAccount登录完成后返回的ggid字段，必填
- 5、extension为扩展参数，可扩展一些透传参数，选填，默认填nil
+ 3、loginToken为登录方式对应的校验凭证
+ |--3.1）当登录方式为TraceAnalysisLoginTypeGuest时，此值可不传
+ |--3.2）当登录方式为TraceAnalysisLoginTypeFacebook时，此值传facebook返回的openToken
+ |--3.3）当登录方式为TraceAnalysisLoginTypeTwitter时，此值传twitter返回的信息拼接成的json字符串，格式：{"twitterId":"xx","twitterUserName":"xx","twitterAuthToken":"xx"}
+ |--3.4）当登录方式为TraceAnalysisLoginTypeGamecenter时，此值传GameCenter返回的teamPlayerID或playerID
+ |--3.5）当登录方式为TraceAnalysisLoginTypeApple时，此值传apple返回的identityToken字符串
+ |--3.6）当登录方式为TraceAnalysisLoginTypeOther时，此值传对应的登录方式返回的能校验用户合法性的对应参数
+ 4、extension为扩展参数，可扩展一些透传参数，选填，默认填nil
  */
-+ (void)logAASLoginWithType:(NSString *)loginType
-                   playerId:(NSString *)playerId
-                 loginToken:(NSString *)loginToken
-                       ggid:(NSString *)ggid
-                  extension:(NSDictionary <NSString *, NSString *> *)extension;
++ (void)logCommonLoginWithType:(NSString *)loginType
+                      playerId:(NSString *)playerId
+                    loginToken:(NSString *)loginToken
+                     extension:(NSDictionary <NSString *, NSString *> *)extension;
 ```
 
 其中参数解明如下
@@ -52,105 +111,13 @@ extern NSString *const TraceAnalysisLoginTypeOther;
 |:----  |-----   |
 |loginType |登录方式，如guest，fb，  只能从上述定义的extern字符串中选择，未支持的登录方式请使用TraceAnalysisLoginTypeOther|
 |playerId |游戏的用户系统中用户唯一标识 |
-|loginToken |登录方式对应的校验凭证，可以传AASDK返回的signedRequest  |
-|ggid |AASDK登录完成后返回的ggid字段，必填 |
+|loginToken |登录方式对应的校验凭证  |
 |extension |扩展参数，可扩展一些透传参数，选填，默认填nil |
 
 <br>
 
-3、从AASDK获取登录上报所需参数
----
+调用此方法时，
 
-3.1、loginType
+为确保服务器能正确识别并接受各参数，请仔细阅读方法注释，以免参数错误照成服务器解析失败。
 
-可以从AASDK登录成功后返回的`AASAccountLoginModel`对象中的`loginMode`参数获取，映射方式为：
-
-```
-回调中model参数的loginMode字段为登录方式，与loginType对照如下
-
-/*
- loginMode 字段解释，可参见AASEnumDefine.h中枚举
- 1  -->  TraceAnalysisLoginTypeGuest 
- 2  -->  TraceAnalysisLoginTypeAas 
- 3  -->  TraceAnalysisLoginTypeFacebook 
- 4  -->  TraceAnalysisLoginTypeGoogleplay 
- 6  -->  TraceAnalysisLoginTypeTwitter 
- 8  -->  TraceAnalysisLoginTypeInstagram 
- 9  -->  TraceAnalysisLoginTypeGamecenter 
- 10 -->  TraceAnalysisLoginTypeUlt 
- 11 -->  TraceAnalysisLoginTypeApple 
- */
- ```
-
-3.2、loginToken 
-
-可以从AASDK登录成功后返回的`AASAccountLoginModel`对象中的`signedRequest`参数获取
-
-3.3、ggid 
-
-可以从AASDK登录成功后返回的`AASAccountLoginModel`对象中的`gameGuestId`参数获取
-
-<br>
-
-4、最佳实践
----
-
-```
-- (void)login {
-    
-    [AASAccountSDK setLoginCallback:^(AASAccountLoginModel * _Nonnull model) {
-        NSLog(@"AASAccountSDK login gameGuestId:%@，loginMode:%d",model.gameGuestId,model.loginMode);
-        
-        [self logLoginWithModel:model];
-        
-    } errorCallback:^(NSError * _Nonnull error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_loginButton setTitle:[NSString stringWithFormat:@"error:%i",(int)error.code] forState:UIControlStateNormal];
-        });
-        NSLog(@"AASAccountSDK login error:%@",error);
-    }];
-    [AASAccountSDK login];
-}
-
-- (void)logLoginWithModel:(AASAccountLoginModel *)model {
-    
-    NSString *loginType;
-    if (model.loginMode == 1) {
-        loginType = TraceAnalysisLoginTypeGuest;
-    }
-    else if (model.loginMode == 2) {
-        loginType = TraceAnalysisLoginTypeAas;
-    }
-    else if (model.loginMode == 3) {
-        loginType = TraceAnalysisLoginTypeFacebook;
-    }
-    else if (model.loginMode == 4) {
-        loginType = TraceAnalysisLoginTypeGoogleplay;
-    }
-    else if (model.loginMode == 6) {
-        loginType = TraceAnalysisLoginTypeTwitter;
-    }
-    else if (model.loginMode == 8) {
-        loginType = TraceAnalysisLoginTypeInstagram;
-    }
-    else if (model.loginMode == 9) {
-        loginType = TraceAnalysisLoginTypeGamecenter;
-    }
-    else if (model.loginMode == 10) {
-        loginType = TraceAnalysisLoginTypeUlt;
-    }
-    else if (model.loginMode == 11) {
-        loginType = TraceAnalysisLoginTypeApple;
-    }
-    else {
-        loginType = TraceAnalysisLoginTypeOther;
-    }
-    
-    NSString *playerId = `your player id`;
-    NSString *loginToken = model.signedRequest;
-    NSString *ggid = model.gameGuestId;
-    
-    [TraceAnalysis logAASLoginWithType:loginType playerId:playerId loginToken:loginToken ggid:ggid extension:nil];
-}
-```
-
+如上述定义的extern字符串中没有您使用的登录方式，请事先与我们沟通参数内容与编码规则，否则上报服务器时将解析失败。

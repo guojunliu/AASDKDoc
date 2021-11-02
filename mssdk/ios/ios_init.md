@@ -2,7 +2,7 @@
 在要使用的类中引入头文件
 
 ```
-#import &lt;MSSDK/MSSDK.h>
+#import <MSSDK/MSSDK.h>
 ```
 
 其中初始化方法如下

@@ -1,5 +1,5 @@
 # 1. 概述
-如游戏中使用[AASDK][1]实现游戏的登录功能，需将登录结果同步至统计服务器以便分析用户数据。推荐使用以下 API 完成相应登录上报。
+如游戏中使用[AASDK](/aasdk/)实现游戏的登录功能，需将登录结果同步至统计服务器以便分析用户数据。推荐使用以下 API 完成相应登录上报。
 
 
 ## 1.1  通用登录上报
@@ -90,5 +90,3 @@ public class MainActivity extends AppCompatActivity {
 }
 
 ```
-
-[1]: http://doc.avidly.com/docs/show/369 "AASDK "

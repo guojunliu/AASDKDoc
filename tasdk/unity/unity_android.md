@@ -1,17 +1,9 @@
-
-
-[1. 导入 SDK 包](#jump1)<br>
-[2. 混淆配置](#jump3)</br>
-
-
-------------
-
-# <span id="jump1">1. 导入 SDK 包</span>
+# 1. 导入 SDK 包
 
  - 导入TASDK Unity Package
  - 右键Assets目录，选择External Dependency Manager - Android Resolver - Force Resolve, 下载依赖的jar包
  
-# <span id="jump3">2. 混淆配置</span>
+# 2. 混淆配置
 
 如项目已开启混淆功能，请按照如下规则添加混淆配置。
 

@@ -2,6 +2,7 @@
 # 1. 导入 SDK 包
 
 将 `TraceAnalysisSDK.framework` 导入至工程中，并勾选如下配置
+
 ![](http://doc.gamehaus.com/uploads/201807/5b3c81f77d038_5b3c81f7.png)
 
 &ensp;
@@ -11,21 +12,24 @@
 - libsqlite3.dylib
 
    如下图所示:
+   
    ![](http://doc.gamehaus.com/uploads/201905/5ceb982ea61e9_5ceb982e.png)
 
 &ensp;
 
 # 3. 工程配置
 - 在 `info.plist` 中添加以下节点，以兼容 http 模式：
-```java
- &lt;key>NSAppTransportSecurity &lt;/key>
- &lt;dict>
-     &lt;key>NSAllowsArbitraryLoads &lt;/key>
-     &lt;true/>
- &lt;/dict>
+
+```xml
+ <key>NSAppTransportSecurity </key>
+ <dict>
+     <key>NSAllowsArbitraryLoads </key>
+     <true/>
+ </dict>
 ```
 
 - 在 TARGETS > Build Setting > Linking > Other Linker Flags 中添加 `-ObjC`：
+
   ![](http://doc.gamehaus.com/uploads/201807/5b3c85c61e5f1_5b3c85c6.png)
   
 - 开启 Keychain Sharing（iOS 10 以上需开启）：

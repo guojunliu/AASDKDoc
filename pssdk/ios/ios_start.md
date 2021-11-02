@@ -1,10 +1,4 @@
-[1. 工程引入](#jump1)</br>
-[2. Demo 工程](#jump2)</br>
-
-------------
-
-&ensp;
-# <span id="jump1">1.工程引入</span>
+# 1.工程引入
 
 1）[下载](https://github.com/Avid-ly/iOS-PSSDK-Demo/releases) `PSSDK`
 
@@ -16,5 +10,5 @@
 #import &lt;PSSDK/PSSDK.h>
 ```
 
-# <span id="jump2">2. Demo 工程</span>
+# 2. Demo 工程
 为更好的了解 PSSDK 的导入和使用，请参考 [Demo工程](https://github.com/Avid-ly/iOS-PSSDK-Demo "Demo工程")。
