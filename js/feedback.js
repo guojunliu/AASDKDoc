@@ -1,3 +1,6 @@
+var _czc = _czc || [];
+_czc.push(["_setAccount","1280517875"]);
+
 var url = window.location.href;
 
 function plugin (hook, vm) {
