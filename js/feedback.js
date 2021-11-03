@@ -2,10 +2,12 @@ function plugin (hook, vm) {
   hook.beforeEach(function(html) {
 
     url = window.location.href;
-    var editHtml = '<div><span>该文档内容是否给您带来了帮助？</span><button type="button" onclick="helpfulClick()">有用</button><button type="button" onclick="unhelpfulClick()">没用</button></div>';
+    // var editHtml = '<div class="ssssxxx"><span>以上内容是否对您有帮助？</span><button type="button" onclick="helpfulClick()">是</button><button type="button" onclick="unhelpfulClick()">否</button></div>';
+
+    var editHtml = '<div class="feebbackdiv"><span>以上内容是否对您有帮助？</span><span class="tip" onclick="helpfulClick()">是</span><span class="tip" type="button" onclick="unhelpfulClick()">否</span></div>';
 
     return (
-      html + '</br></br></br></br>' + editHtml
+      html + '\n</br></br></br>\n----\n' + editHtml
     );
   });
 }
@@ -13,12 +15,12 @@ function plugin (hook, vm) {
 function helpfulClick() {
 
 	var url = window.location.href;
-	_czc.push(["_trackEvent", "feedback-helpful", "helpful", url]);
+	_czc.push(["_trackEvent", "feedback-helpful", "", ""]);
     alert("感谢您的反馈");
 }
 
 function unhelpfulClick() {
-    _czc.push(['_trackEvent','feedback-unhelpful','unhelpful', url]);
+    _czc.push(['_trackEvent','feedback-unhelpful','', '']);
     alert("感谢您的反馈");
 }
 

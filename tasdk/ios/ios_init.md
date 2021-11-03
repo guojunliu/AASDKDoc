@@ -34,4 +34,3 @@
 ```objective-c
 [TraceAnalysis initWithProductId:@"999999" ChannelId:@"32407" AppID:@""];
 ```
-&ensp;

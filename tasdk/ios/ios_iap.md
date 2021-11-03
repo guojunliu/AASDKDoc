@@ -73,7 +73,3 @@
 |receiptDataString |  第三方支付平台单据。  |
 
 <br>
-<br>
-<br>
-<br>
-<br>

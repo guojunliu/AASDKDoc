@@ -46,4 +46,3 @@
 |设备兼容性 | &bull;&ensp;模拟器。<br>&bull;&ensp;iphone6 及以上机型。</br>  |
 |CPU 兼容性 |  &bull;&ensp;i386<br>&bull;&ensp;armv7</br>&bull;&ensp;x86_64<br>&bull;&ensp;arm64</br>  |
 |iOS 版本兼容性 | iOS 10.0 以上  |
-
