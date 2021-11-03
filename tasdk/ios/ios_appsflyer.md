@@ -21,3 +21,4 @@ NSString *appsFlyerUID = [[AppsFlyerLib shared] getAppsFlyerUID];
 // 将appsFlyerUID上传给统计包
 [TraceAnalysis setAppsFlyerId:appsFlyerUID];
 ```
+

@@ -5,3 +5,4 @@
 ```objective-c
 + (void)disableAccessPrivacyInformation;
 ```
+
