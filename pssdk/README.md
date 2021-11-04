@@ -11,13 +11,13 @@ PSSDK 帮助开发者合规应对多个国家的隐私保护法，对不同地�
 # 文档目录
 
 
--  [Unity 帮助文档](http://doc.gamehaus.com/docs/show/428 "Unity 帮助文档")
+-  [Unity 帮助文档](/pssdk/unity/unity_ios.md)
 
--  [Android 帮助文档](http://doc.gamehaus.com/docs/show/422 "Android 帮助文档")
+-  [Android 帮助文档](/pssdk/android/android_start.md)
 
--  [IOS 帮助文档](http://doc.gamehaus.com/docs/show/423 "IOS 帮助文档")
+-  [IOS 帮助文档](/pssdk/ios/ios_start.md)
 
--  [PSSDK 支持政策解读](http://doc.gamehaus.com/docs/show/443 "PSSDK 支持政策解读")
+-  [PSSDK 支持政策解读](/pssdk/other/policy.md)
 
 <br />
 
@@ -31,7 +31,7 @@ PSSDK 帮助开发者合规应对多个国家的隐私保护法，对不同地�
 
 事件统计 SDK
 
-[TASDK 隐私授权帮助文档](http://doc.gamehaus.com/docs/show/244)
+[TASDK 隐私授权帮助文档](/tasdk/ios/ios_pricacy.md)
 
 广告聚合 SDK
 
@@ -39,7 +39,7 @@ PSSDK 帮助开发者合规应对多个国家的隐私保护法，对不同地�
 
 [Max 隐私授权帮助文档](https://dash.applovin.com/documentation/mediation/ios/getting-started/privacy)
 
-[MSSDK 隐私授权帮助文档](http://doc.gamehaus.com/docs/show/395)
+[MSSDK 隐私授权帮助文档](/mssdk/ios/ios_gdpr)
 
 <br />
 
