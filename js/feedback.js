@@ -14,13 +14,13 @@ function plugin (hook, vm) {
 
 function helpfulClick() {
   var url = window.location.href;
-	_czc.push(["_trackEvent", "feedback-helpful", "xx", "xx"]);
+	_czc.push(["_trackEvent", "feedback-helpful", url, "xx"]);
   alert("感谢您的反馈");
 }
 
 function unhelpfulClick() {
   var url = window.location.href;
-  _czc.push(['_trackEvent','feedback-unhelpful','xx', 'xx']);
+  _czc.push(['_trackEvent','feedback-unhelpful', url, 'xx']);
   alert("感谢您的反馈");
 }
 
